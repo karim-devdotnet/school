@@ -1,18 +1,21 @@
 {
-    "version": "0.1.0",
+    "version": "0.2.0",
     "configurations": [
         {
-            "name": "Extension starten",
+            "name": "Launch main.js",
             "type": "node",
             "request": "launch",
+            "program": "${workspaceRoot}\\src\\web\\main.js",
+            "stopOnEntry": false,
             "runtimeExecutable": "C:\\Users\\andre\\AppData\\Roaming\\npm\\node_modules\\electron\\dist\\electron.exe",
             "args": [
                 "--extensionDevelopmentPath=${workspaceRoot}"
             ],
-            "program": "${workspaceRoot}\\src\\web\\main.js",
-            "stopOnEntry": false,
+            "runtimeArgs": [],
+            "env": { },
+            "cwd": "${workspaceRoot}\\src\\web",
             "sourceMaps": true,
-            "outDir": "C:\\git\\outDir"
+            "outDir": null
         }
     ]
 }
