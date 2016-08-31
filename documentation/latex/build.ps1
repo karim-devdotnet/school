@@ -1,1 +1,1 @@
-pdflatex .\index.tex --jobname=Documentation.pdf
+pdflatex .\index.tex --jobname=Documentation
