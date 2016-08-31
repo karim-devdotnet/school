@@ -255,3 +255,5 @@ paket-files/
 index.vscodeLog
 *.aux
 /documentation/latex/*.pdf
+/documentation/latex/*.zip
+/documentation/latex/*.exe
