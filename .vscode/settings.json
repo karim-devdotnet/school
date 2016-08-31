@@ -1,0 +1,6 @@
+{
+    "latexCompile.mainFile": "${workspaceRoot}/documentation/latex/index.tex",
+    "latexCompile.openAfterCompile": true,
+    "latexCompile.openLogAfterError": true,
+    "latexCompile.compiler": "pdflatex"
+}
