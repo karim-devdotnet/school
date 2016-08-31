@@ -250,3 +250,11 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+#tex
+index.vscodeLog
+*.aux
+/documentation/latex/*.pdf
+/documentation/latex/*.zip
+/documentation/latex/*.exe
+/documentation/latex/*.synctex.gz

@@ -1,0 +1,1 @@
+pdflatex .\index.tex --jobname=Documentation
