@@ -1,16 +1,41 @@
-\documentclass[11pt]{book}
-\author{André Kirst}
+\documentclass[12pt]{book}
+\author{Andr\'{e} Kirst}
 \date{\today{}, Leipzig}
 \title{School - Projektdokumentation}
 \usepackage{geometry}
 \geometry{a4paper, top=25mm, left=35mm, right=25mm, bottom=25mm}
 \usepackage[ngerman]{babel} %deutsche Silbentrennung
+\usepackage{graphicx}
 \usepackage{titlesec}
+\usepackage{fancyhdr} %Paket laden
+
 
 \begin{document}
 
-School!
+\pagestyle{fancy} %eigener Seitenstil
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+\fancyhead[L]{School} %Kopfzeile links
+\fancyhead[C]{} %zentrierte Kopfzeile
+\fancyhead[R]{} %Kopfzeile rechts
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+\fancyfoot[C]{\thepage} %Seitennummer
+\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
 
-\include{kapitel/person}
+\fancyhead[OR]{} % "O" steht für "odd", also ungerade Seiten
+\fancyhead[ER]{} % "E" für "even", also gerade Seiten.
+
+
+\maketitle
+
+\input{einleitung}
+
+\newpage
+
+\tableofcontents
+
+\chapter{Objekte}
+\input{kapitel/person}
+
+\chapter{Technischer Aufbau}
 
 \end{document}
