@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Copyright André Kirst
+ * 2016 - 2016
+ * School
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -29,6 +34,9 @@ namespace WebApi
         {
             // Add framework services.
             services.AddMvc();
+            services.AddLogging();
+            services.AddOptions();
+            services.AddSingleton<IConfiguration>(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
