@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.Base;
+using MongoDB.Driver;
+using WebApi.Models;
 
 namespace WebApi.Controllers
 {
@@ -13,6 +16,13 @@ namespace WebApi.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
+            MongoClient client = SchoolContext.Instance().GetConnection();
+
+            IMongoDatabase db = client.GetDatabase("school");
+
+            IMongoCollection<Schueler> schueler = db.GetCollection<Schueler>("schueler");
+
+            schueler.InsertOne(new Schueler() { SchuelerID = "1", Vorname = "André", Nachname = "Kirst", CreatedAt = DateTime.Now });
 
             return new string[] { "value1", "value2" };
         }
