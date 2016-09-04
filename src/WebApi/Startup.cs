@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using WebApi.Base;
 
 namespace WebApi
 {
@@ -37,6 +38,7 @@ namespace WebApi
             services.AddLogging();
             services.AddOptions();
             services.AddSingleton<IConfiguration>(Configuration);
+            SchoolContext ctx = SchoolContext.Instance(Configuration.GetConnectionString("DefaultMongoConnection"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -12,13 +12,40 @@ using System.Threading.Tasks;
 
 namespace WebApi.Base
 {
-    public static class SchoolContext
+    public class SchoolContext
     {
-        public static string GetConnection()
+        public SchoolContext(string connectionString)
         {
-            return string.Empty;
-            //MongoClient client = new MongoClient(Conn);
-            //return client.GetServer();
+            ConnectionString = connectionString;
+        }
+
+        private static SchoolContext __instance = null;
+        public static SchoolContext Instance(string connectionString)
+        {
+            if(__instance == null)
+            {
+                __instance = new SchoolContext(connectionString);
+            }
+            return __instance;
+        }
+        public static SchoolContext Instance()
+        {
+            if(__instance == null)
+            {
+                throw new Exception("Der SchoolContext muss mit Instance(string) aufgerufen werden");
+            }
+            return __instance;
+        }
+
+        public string ConnectionString
+        {
+            get; set;
+        }
+
+        public MongoClient GetConnection()
+        {
+            MongoClient client = new MongoClient(ConnectionString);
+            return client;
         }
     }
 }
