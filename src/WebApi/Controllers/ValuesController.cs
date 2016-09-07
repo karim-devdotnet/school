@@ -16,11 +16,7 @@ namespace WebApi.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            MongoClient client = SchoolContext.Instance().GetConnection();
-
-            IMongoDatabase db = client.GetDatabase("school");
-
-            IMongoCollection<Schueler> schueler = db.GetCollection<Schueler>("schueler");
+            IMongoCollection<Schueler> schueler = SchoolContext.Instance().GetCollection<Schueler>("schueler");
 
             schueler.InsertOne(new Schueler() { SchuelerID = "1", Vorname = "André", Nachname = "Kirst", CreatedAt = DateTime.Now });
 

@@ -12,22 +12,46 @@ using System.Threading.Tasks;
 
 namespace WebApi.Base
 {
+    /// <summary>
+    /// Diese Klasse dient dazu, das Auslesen und das Speichern der Objekte zu vereinheitlichen
+    /// </summary>
     public class SchoolContext
     {
-        public SchoolContext(string connectionString)
+        #region Fields
+        private static SchoolContext __instance = null;
+        private MongoClient _mongoClient = null; 
+        #endregion
+
+        /// <summary>
+        /// Konstruktur mit dem ConnectionString und der Datenbank
+        /// </summary>
+        /// <param name="connectionString">Der ConnectionString zu der MongoDatenbank</param>
+        /// <param name="databaseName">Die Datenbank</param>
+        public SchoolContext(string connectionString, string databaseName)
         {
             ConnectionString = connectionString;
+            DatabaseName = databaseName;
         }
 
-        private static SchoolContext __instance = null;
-        public static SchoolContext Instance(string connectionString)
+        /// <summary>
+        /// Singleton-Instanz mit ConnectionString und der Name der Datenbank
+        /// </summary>
+        /// <param name="connectionString">Der ConnectionString zu der MongoDatenbank</param>
+        /// <param name="databaseName">Die Datenbank</param>
+        /// <returns></returns>
+        public static SchoolContext Instance(string connectionString, string databaseName)
         {
             if(__instance == null)
             {
-                __instance = new SchoolContext(connectionString);
+                __instance = new SchoolContext(connectionString, databaseName);
             }
             return __instance;
         }
+
+        /// <summary>
+        /// Singleton-Instanz
+        /// </summary>
+        /// <returns></returns>
         public static SchoolContext Instance()
         {
             if(__instance == null)
@@ -37,15 +61,60 @@ namespace WebApi.Base
             return __instance;
         }
 
+        /// <summary>
+        /// Die Datenbank-Verbindung
+        /// </summary>
+        private IMongoDatabase DatabaseInstance
+        {
+            get
+            {
+                if(__instance == null)
+                {
+                    return null;
+                }
+                return __instance.GetConnection().GetDatabase(DatabaseName);
+            }
+        }
+
+        /// <summary>
+        /// Der ConnectionString
+        /// </summary>
         public string ConnectionString
         {
             get; set;
         }
 
-        public MongoClient GetConnection()
+        /// <summary>
+        /// Der Datenbankname
+        /// </summary>
+        public string DatabaseName
         {
-            MongoClient client = new MongoClient(ConnectionString);
-            return client;
+            get; set;
+        }
+
+        /// <summary>
+        /// Gibt die Verbindung zurück
+        /// </summary>
+        /// <returns></returns>
+        private MongoClient GetConnection()
+        {
+            if(_mongoClient == null)
+            {
+                _mongoClient = new MongoClient(ConnectionString);
+            }
+            return _mongoClient;
+        }
+
+        /// <summary>
+        /// Gibt eine IMongoCollection anhand des Names der Liste zurück
+        /// </summary>
+        /// <typeparam name="TDocument">Das Dokument, was ausgelesen werden soll</typeparam>
+        /// <param name="name"></param>
+        /// <param name="settings"></param>
+        /// <returns></returns>
+        public IMongoCollection<TDocument> GetCollection<TDocument>(string name, MongoCollectionSettings settings = null)
+        {
+            return DatabaseInstance.GetCollection<TDocument>(name, settings);
         }
     }
 }

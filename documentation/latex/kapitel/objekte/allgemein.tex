@@ -6,3 +6,12 @@ Das Basisobjekt (\textit{ModelBaseObject}) hat folgende Attribute:
 \textbf{CreatedAt} : \textit{DateTime} : Das Datum, bei dem das Objekt entstanden ist
 
 \textbf{ModifiedAt} : \textit{DateTime?} : Das Datum, bei dem das Objekt zuletzt ge\"andert wurde
+
+\subsection{Klasse \textit{SchoolContext}}
+\label{sec:Objekte_Klasse_SchoolContext}
+Die Klasse \textit{SchoolContext} dient dazu, die Zugriffe auf die MongoDB zu vereinfachen. Um die Klasse zu instanziieren, wurde das Singleton-Pattern eingesetzt.
+
+\lstset{style=sharpc}
+\begin{lstlisting}
+SchoolContext.Instance()
+\end{lstlisting}

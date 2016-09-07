@@ -9,13 +9,18 @@
 \usepackage{titlesec}
 \usepackage{fancyhdr} %Paket laden
 \usepackage{caption, booktabs}
-
+\usepackage[xindy]{glossaries}	
 \usepackage{tikz}
 \usepackage{ifthen}
 \usepackage{xstring}
 \usepackage{calc}
 \usepackage{pgfopts}
 \usepackage{pgfkeys}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstdefinestyle{sharpc}{language=[Sharp]C, frame=lr, rulecolor=\color{blue!80!black}}
 
 \begin{document}
 
@@ -44,5 +49,11 @@
 \input{kapitel/objekte/index}
 
 \chapter{Technischer Aufbau}
+
+\printglossary[style=altlist,title=Glossar]
+
+%Abkürzungen ausgeben
+\deftranslation[to=German]{Acronyms}{Abkürzungsverzeichnis}
+\printglossary[type=\acronymtype,style=long]
 
 \end{document}
