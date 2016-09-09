@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApi.Models;
 
 namespace WebApi.Base
 {
@@ -19,7 +20,7 @@ namespace WebApi.Base
     {
         #region Fields
         private static SchoolContext __instance = null;
-        private MongoClient _mongoClient = null; 
+        private MongoClient _mongoClient = null;
         #endregion
 
         /// <summary>
@@ -113,8 +114,38 @@ namespace WebApi.Base
         /// <param name="settings"></param>
         /// <returns></returns>
         public IMongoCollection<TDocument> GetCollection<TDocument>(string name, MongoCollectionSettings settings = null)
+            where TDocument : ModelBaseObject
         {
             return DatabaseInstance.GetCollection<TDocument>(name, settings);
+        }
+
+        public async Task<bool> SaveItem<TDocument>(TDocument document, IMongoCollection<TDocument> collection)
+            where TDocument : ModelBaseObject
+        {
+            return await SaveItems(new List<TDocument>() { document }, collection);
+        }
+
+        public async Task<bool> SaveItems<TDocument>(List<TDocument> documents, IMongoCollection<TDocument> collection)
+            where TDocument : ModelBaseObject
+        {
+            if(collection == null)
+            {
+                throw new NullReferenceException("Die Collection darf nicht NULL sein.");
+            }
+
+            List<TDocument> documentsToInsert = documents.Where(s => s.Id.Pid == 0).ToList();
+            List<TDocument> documentsToUpdate = documents.Where(s => s.Id.Pid != 0).ToList();
+
+            if(documentsToInsert.Any())
+            {
+                await collection.InsertManyAsync(documentsToInsert);
+            }
+
+            if(documentsToUpdate.Any())
+            {
+                await collection.InsertManyAsync(documentsToUpdate);
+            }
+            return true;
         }
     }
 }
