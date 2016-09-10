@@ -12,32 +12,35 @@ namespace WebApi.Controllers
     [Route("api/[controller]")]
     public class SchuelerController : Controller
     {
-        // GET api/values
+        // GET api/schueler
         [HttpGet]
-        public async Task<IEnumerable<Schueler>> Get()
+        public IEnumerable<Schueler> Get()
         {
             IMongoCollection<Schueler> schueler = SchoolContext.Instance().GetCollection<Schueler>("schueler");
-
-            //await SchoolContext.Instance().SaveItem<Schueler>(new Schueler() { SchuelerID = "1", Vorname = "André", Nachname = "Kirst", CreatedAt = DateTime.Now }, schueler);
-
-            //schueler.InsertOne(new Schueler() { SchuelerID = "1", Vorname = "André", Nachname = "Kirst", CreatedAt = DateTime.Now });
-
-            //return new string[] { "value1", "value2" };
             return schueler.AsQueryable();
         }
 
-        // GET api/values/5
+        // GET api/schueler/5
         [HttpGet("{id}")]
-        public Schueler Get(string id)
+        public IEnumerable<Schueler> Get(string id)
         {
-            return SchoolContext.Instance().GetCollection<Schueler>("schueler").AsQueryable().FirstOrDefault(s => s.SchuelerID == id);
+            return SchoolContext.Instance().GetCollection<Schueler>("schueler").AsQueryable().Where(s => s.SchuelerID == id);
         }
 
-        //// POST api/values
-        //[HttpPost]
-        //public void Post([FromBody]string value)
-        //{
-        //}
+        // POST api/schueler
+        [HttpPost]
+        public async Task<bool> Post([FromBody]Schueler value)
+        {
+            try
+            {
+                await SchoolContext.Instance().SaveItem<Schueler>(value, SchoolContext.Instance().GetCollection<Schueler>("schueler"));
+            }
+            catch(Exception)
+            {
+                return false;
+            }
+            return true;
+        }
 
         //// PUT api/values/5
         //[HttpPut("{id}")]
