@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Copyright André Kirst
+ * 2016 - 2016
+ * School
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,11 +17,13 @@ namespace WebApi.Controllers
     [Route("api/[controller]")]
     public class SchuelerController : Controller
     {
+        private string _collectionName = "schueler";
+
         // GET api/schueler
         [HttpGet]
         public IEnumerable<Schueler> Get()
         {
-            IMongoCollection<Schueler> schueler = SchoolContext.Instance().GetCollection<Schueler>("schueler");
+            IMongoCollection<Schueler> schueler = SchoolContext.Instance().GetCollection<Schueler>(_collectionName);
             return schueler.AsQueryable();
         }
 
@@ -24,7 +31,7 @@ namespace WebApi.Controllers
         [HttpGet("{id}")]
         public IEnumerable<Schueler> Get(string id)
         {
-            return SchoolContext.Instance().GetCollection<Schueler>("schueler").AsQueryable().Where(s => s.SchuelerID == id);
+            return SchoolContext.Instance().GetCollection<Schueler>(_collectionName).AsQueryable().Where(s => s.SchuelerID == id);
         }
 
         // POST api/schueler
@@ -33,7 +40,7 @@ namespace WebApi.Controllers
         {
             try
             {
-                await SchoolContext.Instance().SaveItem<Schueler>(value, SchoolContext.Instance().GetCollection<Schueler>("schueler"));
+                await SchoolContext.Instance().SaveItem(value, SchoolContext.Instance().GetCollection<Schueler>(_collectionName));
             }
             catch(Exception)
             {
