@@ -27,9 +27,25 @@ namespace WebApi.Models
         }
 
         /// <summary>
+        /// Die Person, die das Objekt erstellt hat
+        /// </summary>
+        public Person CreatedBy
+        {
+            get; set;
+        }
+
+        /// <summary>
         /// Das Datum, bei dem das Objekt zuletzt geändert wurde
         /// </summary>
         public DateTime? ModifiedAt
+        {
+            get; set;
+        }
+
+        /// <summary>
+        /// Die Person, die das Objekt verändert hat
+        /// </summary>
+        public Person ModifiedBy
         {
             get; set;
         }

@@ -10,16 +10,12 @@ using System.Threading.Tasks;
 
 namespace WebApi.Models
 {
-    public class Schueler : Person
+    public class Lehrer : Person
     {
-        public Schueler()
-        {
-        }
-
         /// <summary>
-        /// Die ID des Schülers
+        /// Die ID des Lehrers
         /// </summary>
-        public string SchuelerID
+        public string LehrerID
         {
             get; set;
         }
