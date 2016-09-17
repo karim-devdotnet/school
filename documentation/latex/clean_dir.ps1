@@ -5,3 +5,14 @@ rm *.vscodeLog;
 rm *.exe;
 rm *.zip;
 rm *.gz;
+rm *.toc;
+rm *.toc
+rm *.4ct
+rm *.4tc
+rm *.css
+rm *.dvi
+rm *.html
+rm *.idv
+rm *.lg
+rm *.xref
+rm *.tmp

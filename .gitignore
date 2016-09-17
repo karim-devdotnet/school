@@ -258,3 +258,12 @@ index.vscodeLog
 /documentation/latex/*.zip
 /documentation/latex/*.exe
 /documentation/latex/*.synctex.gz
+/documentation/latex/*.toc
+/documentation/latex/*.4ct
+/documentation/latex/*.4tc
+/documentation/latex/*.css
+/documentation/latex/*.dvi
+/documentation/latex/*.html
+/documentation/latex/*.idv
+/documentation/latex/*.lg
+/documentation/latex/*.xref
