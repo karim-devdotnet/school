@@ -6,7 +6,7 @@
 * Noten
 * Hausaufgaben
 * Stundenplan
-* Vertetungsplan
+* Vertretungsplan
 * Berichte
 * Zeugnis
 * Termine
@@ -14,7 +14,7 @@
 * Verwaltung (Angestellter)
 * eBooks
 * Lernmaterial
-* LK/Arbeiten
+* Leistungskontrolle/Arbeiten
 * Lernverbesserung (Achivement)
 * Sitzplan
 * Essensplan
@@ -22,5 +22,5 @@
 * Fehlzeiten/Kranktage/Krankschreibung
 * Dokumentenbibliothek
 * Klassenbuch
-* Gebäude/Rumverwaltung
+* Gebäude/Raumverwaltung
 * Ferien (je Bundesland)
