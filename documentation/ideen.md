@@ -28,7 +28,7 @@ Diese **Person** kann ein Elternteil sein, oder eine Person, aus einer sozialen 
 
 ### Note
 
-Eine Note ist eine Bewertung für einen **Schüler**. Eine Note wird von einem **Lehrer** in einem bestimmten **Fach** vergeben. Zusäzlich kann dem **Schüler** **Kopfnote**n vergeben werden, die auch außerhalb des Faches liegen können. 
+Eine Note ist eine Bewertung für einen **Schüler**. Eine Note wird von einem **Lehrer** in einem bestimmten **Fach** vergeben. Zusäzlich kann dem **Schüler** **Kopfnote**n vergeben werden, die auch außerhalb des Faches liegen können.
 
 ### Kopfnote
 
