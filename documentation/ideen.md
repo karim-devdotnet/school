@@ -28,7 +28,8 @@ Diese **Person** kann ein Elternteil sein, oder eine Person, aus einer sozialen 
 
 ### Note
 
-Eine Note ist eine Bewertung für einen **Schüler**. Eine Note wird von einem **Lehrer** in einem bestimmten **Fach** vergeben. Zusäzlich kann dem **Schüler** **Kopfnote**n vergeben werden, die auch außerhalb des Faches liegen können.
+Eine Note ist eine Bewertung für einen **Schüler**.
+Eine Note wird von einem **Lehrer** in einem bestimmten **Fach** vergeben. Zusäzlich kann dem **Schüler** **Kopfnote**n vergeben werden, die auch außerhalb des Faches liegen können.
 
 ### Kopfnote
 
@@ -44,7 +45,11 @@ Diese können aber in den Einstellungen für eine **Schule** verändert werden.
 
 ### Notenbuch
 
-Ein Notenbuch ist eine Sammlung von **Note**n für einen **Schüler** in einer **Schule**.
+Ein Notenbuch ist eine Sammlung von **Note**n für einen **Schüler** in einer **Schule**. Ein Notenbuch wird für jedes **Schuljahr** angelegt.
+
+### Schuljahr
+
+Ein Schuljahr ist ein definierter Zeitraum einer **Schule**.
 
 ### Fach
 
