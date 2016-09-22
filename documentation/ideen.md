@@ -53,7 +53,9 @@ Ein Schuljahr ist ein definierter Zeitraum einer **Schule**.
 
 ### Fach
 
-### Hausaufgaben
+### Hausaufgabe
+
+Eine Hausaufgabe ist eine Aufgabe für ein **Fach**. Ein **Lehrer** vergibt die Aufgaben an eine **Klasse** oder an einen oder mehrere **Schüler**.
 
 ### Stundenplan
 
@@ -66,6 +68,8 @@ Ein Schuljahr ist ein definierter Zeitraum einer **Schule**.
 ### Termine
 
 ### Klasse
+
+Eine Klasse gehört zu einer **Schule**. Eine Klasse ist einem **Schuljahr** zugeordnet. Eine Klasse hat eine Liste von **Schüler**n. Es gibt eine priorisierte Liste von **Schüler**n, die den **Schülersprecher** repreäsentieren. Zu einer Klasse gehört immer ein **Lehrer**.
 
 ### Verwaltung (Angestellter)
 
