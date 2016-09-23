@@ -12,15 +12,29 @@ Das Produkt *School* ist eine Schulverwaltungssoftware für schulische Einrichtu
 
 > Attribute:
 
+* LoginData
+  * LoginUserIdent (*E-Mail-Adresse*)
+  * Passwort (*Hashwert*)
+  * LastLogin
+  * Avatar
 * Vorname
 * Nachname
 * Geburtstag
+* Adresse
+  * Straße
+  * Ort
+  * Postleitzahl
+  * Hausnummer
+* Kontaktdaten
+  * Telefon/Handy
+  * E-Mail
+  * Slack-Account 
 
 ### Schule
 
 > Beschreibung:
 
-Eine Schule ist eine schulische Einrichtung. Dieser Einrichtung sind **Lehrer**, **Verwaltungsangestellte** und **Schüler** unterstellt.
+Eine Schule ist eine schulische Einrichtung. Dieser Einrichtung sind **Lehrer**, **Verwaltungsangestellte** und **Schüler** zugeordnet.
 
 > Attribute:
 
@@ -111,7 +125,20 @@ Eine Hausaufgabe ist eine Aufgabe für ein **Fach**. Ein **Lehrer** vergibt die 
 
 > Beschreibung:
 
+Ein Stundenplan ist ein spezieller Kalender für **Unterrichtsstunde**n.
+Eine **Schule** plant die **Unterrichtsstunde**n für die **Schüler** 
+
 > Attribute:
+
+### Unterrichtsstunde
+
+> Beschreibung:
+
+Eine Unterrichtsstunde ist ein Bestandteil eines **Stundenplan**.
+
+> Attribute:
+* Fach
+* Geplanter **Lehrer**
 
 ### Vertretungsplan
 
@@ -228,10 +255,12 @@ Eine Klasse gehört zu einer **Schule**. Eine Klasse ist einem **Schuljahr** zug
 * HTML5
 * CSS/LESS
 * Javascript
+
 * [Typescript](https://www.typescriptlang.org/index.html#download-links)
 * [Bootstrapper](http://getbootstrap.com/getting-started/#download)
 * [Electron](http://electron.atom.io/)
 * .Net Core Web API
+* Mehrsprachigkeit
 
 * Einsatz von Produkten:
   * [Slack](https://slack.com/) *(zur Kommunikation innerhalb von Klassen)*
@@ -256,14 +285,14 @@ Eine Klasse gehört zu einer **Schule**. Eine Klasse ist einem **Schuljahr** zug
 
 ### Dokumente
 
-* Anwenderhandbuch
-* Architekturdokumentation
+* Onlinehandbuch und Kontexthilfe
+* Architekturdokumentation (*LaTeX*)
 * Entwicklung
-  * Branching
-  * Codeing-Guideline
-  * Roadmap
-  * Issue-Vorgehen
-  * Glossar
-  * Entwicklungsrichtlinien
-  * Build-Prozess
-  * Code-Review
+  * Branching-Guideline (*Markdown*)
+  * Coding-Guideline (*Markdown*)
+  * Roadmap (*Markdown*)
+  * Issue-Vorgehen (*Markdown*)
+  * Glossar (*noch offen*)
+  * Entwicklungsrichtlinien (*Markdown*)
+  * Build- und Deployment-Prozess (*Markdown*)
+  * Code-Review (*Markdown*)
