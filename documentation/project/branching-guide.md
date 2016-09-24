@@ -8,8 +8,10 @@ Folgendes wird in diesem Guideline behandelt:
 
 ## Allgemein
 
+* Es muss zu einem Feature oder einem Hotfix immer ein Issue geben.
 * Commit-Nachricht mit folgendem Format: `#{issueid} - foo, bar`
 * Commit-Nachrichten enthalten kurze und pregnante Änderungen
+* So oft wie es geht Änderungen committen und wenn möglichen mit GitHub synchronisieren
 
 ## Branches
 
