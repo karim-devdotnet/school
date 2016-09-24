@@ -24,7 +24,7 @@ Folgendes wird in diesem Guideline behandelt:
 ### develop
 
 * Ist der aktuelle Entwicklungszweig
-* Alle Branches von **features/\#{issueid}** werden hier per *Pull Request** *gemerged* 
+* Alle Branches von **features/\#{issueid}** werden hier per *Pull Request* *gemerged* 
 
 ### release/{version}
 
