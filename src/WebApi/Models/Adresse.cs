@@ -3,7 +3,6 @@
  * 2016 - 2016
  * School
 */
-using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,52 +10,55 @@ using System.Threading.Tasks;
 
 namespace WebApi.Models
 {
-    public class Person : ModelBaseObject
+    /// <summary>
+    /// Klasse für eine Adrese
+    /// </summary>
+    public class Adresse
     {
         /// <summary>
-        /// Die ID der Person
+        /// Der Ort
         /// </summary>
-        public string PersonID
+        public string Ort
         {
             get; set;
         }
 
         /// <summary>
-        /// Der Vorname der Person
+        /// Die Straße
         /// </summary>
-        public string Vorname
+        public string Strasse
         {
             get; set;
         }
 
         /// <summary>
-        /// Der Nachname der Person
+        /// Die Postleitzahl
         /// </summary>
-        public string Nachname
+        public string Postleitzahl
         {
             get; set;
         }
 
         /// <summary>
-        /// Der Geburtstag der Person
+        /// Die Hausnummer
         /// </summary>
-        public DateTime? Geburtstag
+        public string Hausnummer
         {
             get; set;
         }
 
         /// <summary>
-        /// Die Anmeldedaten zu der Person
+        /// Das Land
         /// </summary>
-        public PersonLoginData LoginData
+        public string Land
         {
             get; set;
         }
 
         /// <summary>
-        /// Die Wohnadresse
+        /// Das Bundesland
         /// </summary>
-        public Adresse Wohnadresse
+        public string Bundesland
         {
             get; set;
         }
