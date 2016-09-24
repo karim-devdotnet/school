@@ -60,5 +60,21 @@ namespace WebApi.Models
         {
             get; set;
         }
+
+        /// <summary>
+        /// Eine Liste von Telefonnummern
+        /// </summary>
+        public List<Telefonnummer> Telefonnummern
+        {
+            get; set;
+        }
+
+        /// <summary>
+        /// Eine Liste von E-Mail-Adressen
+        /// </summary>
+        public List<EMailAdresse> EMailAdressen
+        {
+            get; set;
+        }
     }
 }

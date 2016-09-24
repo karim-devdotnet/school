@@ -7,12 +7,17 @@
     "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.0",
     "Microsoft.Extensions.Configuration.FileExtensions": "1.0.0",
     "Microsoft.Extensions.Configuration.Json": "1.0.0",
+    "Microsoft.Extensions.DependencyInjection": "1.0.0",
     "Microsoft.Extensions.Logging": "1.0.0",
     "Microsoft.Extensions.Logging.Console": "1.0.0",
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
     "MongoDB.Driver": "2.3.0",
-    "NLog": "4.3.9"
+    "NLog": "4.3.9",
+    "xunit": "2.1.0",
+    "xunit.runner.console": "2.1.0",
+    "xunit.runner.visualstudio": "2.1.0",
+    "xunit.runners": "2.0.0"
   },
 
   "tools": {

@@ -26,9 +26,9 @@ Das Produkt *School* ist eine Schulverwaltungssoftware für schulische Einrichtu
   * Postleitzahl &#10003;
   * Hausnummer &#10003;
 * Kontaktdaten
-  * Telefon/Handy
-  * E-Mail
-  * Slack-Account
+  * Telefon/Handy &#10003;
+  * E-Mail &#10003;
+  * Slack-Account (*Future*)
 
 ### Schule
 
