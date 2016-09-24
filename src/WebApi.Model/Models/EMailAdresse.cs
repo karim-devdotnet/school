@@ -1,7 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿/*
+ * Copyright André Kirst
+ * 2016 - 2016
+ * School
+*/
+using System.Text.RegularExpressions;
 
 namespace WebApi.Models
 {
@@ -24,6 +26,14 @@ namespace WebApi.Models
         public bool IstPrimaer
         {
             get; set;
+        }
+
+        public bool IsValid
+        {
+            get
+            {
+                return Regex.IsMatch(Adresse, @"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
+            }
         }
     }
 }
