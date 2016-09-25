@@ -1,5 +1,7 @@
 # Issue Guide
 
+## Allgemein
+
 ## Symbole
 
 Symbole kennzeichnen Aufgaben in einem Issue, die umzusetzen oder nicht benötigt werden. Erledigte Aufgaben werden mit einem &#10003; gekennzeichnet.
@@ -13,9 +15,16 @@ Symbole kennzeichnen Aufgaben in einem Issue, die umzusetzen oder nicht benötig
 ## Vorlage für Feature-Issue
 
 **Anforderung:** *Anforderungsbeschreibung*
+
+**Betroffene Komponenten:**
+
+* WebApi (symbol)
+  * WebApi.Model (symbol)
+  * WebApi.Test (symbol)
+* WebClient (symbol)
+
 **Dokumentationsanpassungen:**
 
-* Testfall-Dokumentation (symbol)
 * Beschreibungs-Dokumentationen
   * Architektur-Handbuch (symbol)
   * Online-Handbuch (symbol)
@@ -23,12 +32,13 @@ Symbole kennzeichnen Aufgaben in einem Issue, die umzusetzen oder nicht benötig
   * Sicherheits-Handbuch (symbol)
 * Deployment-Handbuch (symbol)
 * Build-Prozess (symbol)
+* Testfall-Dokumentation (symbol)
 
 **Testfälle:**
 
 * *Komponente 1*
-  * *Testfall 1*
-  * *Testfall 2*
+  * *Testfall 1* - *Testfallbeschreibung*
+  * *Testfall 2* - *Testfallbeschreibung*
 
 ## Vorlage für Hotfix-Issue
 
@@ -41,3 +51,7 @@ asd
 ### Erfolgreich
 
 ### Nicht erfolgreich
+
+## Labels
+
+## Meilensteine
