@@ -13,7 +13,7 @@ Symbole kennzeichnen Aufgaben in einem Issue, die umzusetzen oder nicht benötig
 * Nicht benötigt: `&#10007;` (&#10007;)
 
 ## Vorlage für Feature-Issue
-
+```
 **Anforderung:** *Anforderungsbeschreibung*
 
 **Betroffene Komponenten:**
@@ -39,6 +39,7 @@ Symbole kennzeichnen Aufgaben in einem Issue, die umzusetzen oder nicht benötig
 * *Komponente 1*
   * *Testfall 1* - *Testfallbeschreibung*
   * *Testfall 2* - *Testfallbeschreibung*
+```
 
 ## Vorlage für Hotfix-Issue
 
