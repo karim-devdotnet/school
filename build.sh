@@ -29,5 +29,5 @@ dotnet build ./src/WebClient -c Release -f net460
 revision=${TRAVIS_JOB_ID:=1}  
 revision=$(printf "%04d" $revision) 
 
-dotnet pack ./src/WebApi -c Release -o ./artifacts/WebApi --version-suffix=$revision
-dotnet pack ./src/WebClient -c Release -o ./artifacts/WebClient --version-suffix=$revision
+dotnet pack ./src/WebApi -c Release -o ./artifacts --version-suffix=$revision
+dotnet pack ./src/WebClient -c Release -o ./artifacts --version-suffix=$revision
