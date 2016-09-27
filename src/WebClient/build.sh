@@ -9,7 +9,7 @@ if [ -d $artifactsFolder ]; then
   rm -R $artifactsFolder
 fi
 
-dotnet restore ./src/WebApi
+#dotnet restore ./src/WebApi
 dotnet restore ./src/WebClient
 
 # Ideally we would use the 'dotnet test' command to test netcoreapp and net451 so restrict for now 
@@ -19,7 +19,7 @@ dotnet restore ./src/WebClient
 #dotnet test ./src/WebClient -c Release -f netcoreapp1.0
 
 # Instead, run directly with mono for the full .net version 
-dotnet build ./src/WebApi -c Release -f net460
+#dotnet build ./src/WebApi -c Release -f net460
 dotnet build ./src/WebClient -c Release -f net460
 
 #mono \  
@@ -29,5 +29,5 @@ dotnet build ./src/WebClient -c Release -f net460
 revision=${TRAVIS_JOB_ID:=1}  
 revision=$(printf "%04d" $revision) 
 
-dotnet pack ./src/WebApi -c Release -o ./artifacts --version-suffix=$revision
-#dotnet pack ./src/WebClient -c Release -o ./artifacts --version-suffix=$revision
+#dotnet pack ./src/WebApi -c Release -o ./artifacts --version-suffix=$revision
+dotnet pack ./src/WebClient -c Release -o ./artifacts --version-suffix=$revision
