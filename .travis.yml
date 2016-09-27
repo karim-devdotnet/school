@@ -1,8 +1,6 @@
 language: csharp
 sudo: required
 dist: trusty
-git:
-  depth: 3
 env:
   - CLI_VERSION=latest
 os:  
