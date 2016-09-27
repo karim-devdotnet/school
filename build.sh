@@ -5,7 +5,7 @@ set -e
 
 artifactsFolder="./artifacts"
 
-if [ -d $artifactsFolder ]; then  
+if [ -d $artifactsFolder ]; then
   rm -R $artifactsFolder
 fi
 
@@ -26,4 +26,4 @@ dotnet build ./src/WebApi -c Release -f net460
 revision=${TRAVIS_JOB_ID:=1}  
 revision=$(printf "%04d" $revision) 
 
-dotnet pack ./src/WebApi -c Release -o ./artifacts --version-suffix=$revision 
+dotnet pack ./src/WebApi -c Release -o ./artifacts --version-suffix=$revision
