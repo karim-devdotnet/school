@@ -20,7 +20,7 @@ dotnet restore ./src/WebClient
 
 # Instead, run directly with mono for the full .net version 
 dotnet build ./src/WebApi -c Release -f net460
-#dotnet build ./src/WebClient -c Release -f net460
+dotnet build ./src/WebClient -c Release -f net460
 
 #mono \  
 #./test/TEST_PROJECT_NAME/bin/Release/net451/*/dotnet-test-xunit.exe \
