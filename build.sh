@@ -11,4 +11,4 @@ fi
 
 sh ./src/WebApi/build.sh
 
-#sh ./src/WebClient/build.sh
+sh ./src/WebClient/build.sh
