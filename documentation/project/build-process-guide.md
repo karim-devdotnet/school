@@ -11,13 +11,13 @@ Die Konfigurationsdatei ```.travis.yml``` wurde im Root der Quellcodeverwaltung 
 Builds werden nur mit Travis CI erzeugt, wenn:
 
 * ist **master**- oder **develop**-Branch
-* Ein **Pull Request** angefordert wurde
+* ein **Pull Request** angefordert wurde
 
 Unterstützt wird derzeit nur Linux.
 
 ### Skripte
 
-Im Script ```.travis.yml``` wird zum Build eine ```build.sh``` aufgerufen, die widerum ```build.sh``` jeweils im Ordner ```src/WebApi``` und ```src/WebClient``` aufruft.
+Im Skript ```.travis.yml``` wird zum Build eine ```build.sh``` aufgerufen, die widerum ```build.sh``` jeweils im Ordner ```src/WebApi``` und ```src/WebClient``` aufruft.
 
 ## Windows (PowerShell)
 
@@ -27,7 +27,7 @@ Ausgeführt werden muss die Datei ```build.ps1``` im Root der Quellcodeverwaltun
 
 ## Übersicht
 
-| | Travis CI | Windows (PowerShell) |
-|-:|:---------:|:--------------------:|
-| WebApi | &#x25CF; | &#x25CF; |
-| WebClient | &#x25CF; | &#x25CF; |
+|                    | Travis CI | Windows (PowerShell) |
+| -----------: | :-------: | :--------------------: |
+| WebApi       | &#x25CF; | &#x25CF; |
+| WebClient   | &#x25CF; | &#x25CF; |
