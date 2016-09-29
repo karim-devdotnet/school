@@ -1,0 +1,33 @@
+# Build-Process Guide
+
+## Allgemein
+
+Die Build-Erzeugnisse werden in der Konfiguration **Release** erzeugt.
+
+## Travis CI
+
+Die Konfigurationsdatei ```.travis.yml``` wurde im Root der Quellcodeverwaltung abgelegt, damit Travis CI die Datei über GitHub automatisch auslesen und Builds erzeugen kann.
+
+Builds werden nur mit Travis CI erzeugt, wenn:
+
+* ist **master**- oder **develop**-Branch
+* Ein **Pull Request** angefordert wurde
+
+Unterstützt wird derzeit nur Linux.
+
+### Skripte
+
+Im Script ```.travis.yml``` wird zum Build eine ```build.sh``` aufgerufen, die widerum ```build.sh``` jeweils im Ordner ```src/WebApi``` und ```src/WebClient``` aufruft.
+
+## Windows (PowerShell)
+
+Für den Build in Windows, wird die **PowerShell** benutzt.
+
+Ausgeführt werden muss die Datei ```build.ps1``` im Root der Quellcodeverwaltung. Bei der Ausführung wird im Root ein Ordner (Standard: *buildOutput*) erzeugt. Existiert dieser Ordner nicht, wird dieser automatisch angelegt. Wenn der Ordner existiert, werden alle Dateien und Ordner gelöscht.
+
+## Übersicht
+
+| | Travis CI | Windows (PowerShell) |
+|-:|:---------:|:--------------------:|
+| WebApi | &#x25CF; | &#x25CF; |
+| WebClient | &#x25CF; | &#x25CF; |
