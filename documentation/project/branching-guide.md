@@ -1,6 +1,7 @@
 # Branching Guide
 
 Folgendes wird in diesem Guideline behandelt:
+
 * Aufbau der Branchzweige
 * Vorgehen zum Erstellen von neuen Branches anhand von Issues
 * Vorgehen zum Erstellen von *Pull Requests* bzw. mergen von Branches
@@ -31,13 +32,13 @@ Folgendes wird in diesem Guideline behandelt:
 * Wird immer von **master** erstellt
 * Wird erstellt, nachdem der *Pull Request* nach **develop** erfolgreich erfolgt ist
 
-### features/\#{issueid}
+### features/issue_{issueid}
 
 1. Erstellen von **develop**
-2. Nach Beendigung, *Pull Request* nach **develop**
+1. Nach Beendigung, *Pull Request* nach **develop**
     * Alle noch offenen Branches *mergen* dann von **develop** in ihren Branch (ausgeschlossen sind **master** und **hotfix/\#{issueid}**) 
 
-### hotfix/\#{issueid}
+### hotfix/issue_{issueid}
 
 1. Erstellung von **master**-Branch
-2. Nach Beendigung, *Pull Request* in **master** und *merge* in den **develop**-Zweig
+1. Nach Beendigung, *Pull Request* in **master** und *merge* in den **develop**-Zweig
