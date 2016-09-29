@@ -267,3 +267,4 @@ index.vscodeLog
 /documentation/latex/*.idv
 /documentation/latex/*.lg
 /documentation/latex/*.xref
+/buildOutput/*.*
