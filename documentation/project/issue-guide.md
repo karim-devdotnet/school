@@ -44,10 +44,12 @@ Symbole kennzeichnen Aufgaben in einem Issue, die umzusetzen oder nicht benötig
   * *Testfall 2* - *Testfallbeschreibung*
 ```
 
-## Vorlage für Hotfix-Issue:
+## Vorlage für Bug-Issue:
 
 ```
-**Anforderung:** *Anforderungsbeschreibung*
+**Fehler:** *Fehlerbeschreibung*
+
+**StackTrace *(wenn vorhanden):***
 
 **Betroffene Komponenten:**
 
@@ -77,8 +79,6 @@ Symbole kennzeichnen Aufgaben in einem Issue, die umzusetzen oder nicht benötig
 ## Vorlagen für das Schließen von Issues:
 
 ```
-**Anforderung:** *Anforderungsbeschreibung*
-
 **Betroffene Komponenten:**
 
 * WebApi (symbol)
@@ -103,3 +103,14 @@ Symbole kennzeichnen Aufgaben in einem Issue, die umzusetzen oder nicht benötig
   * *Testfall 1* - *Testfallbeschreibung*
   * *Testfall 2* - *Testfallbeschreibung*
 ```
+
+## Labels
+
+Im folgendem Abschnitt werden die Labels und deren Einsatzweise beschrieben:
+
+* `documentation` - Der Issue ist Hauptsächlich für Dokumentations-Arbeiten
+* `environment` - Der Issue ist hauptsächlich für Umgebungsarbeiten wie z.B. Build-Management
+* `feature` - Der Issue ist ein neues Feature. Hierzu muss das Vorlage *Vorlage für Feature-Issue* benutzt werden
+* `bug`- Der Issue bezeichnet einen Fehler in der Software. Hierzu muss die Vorlage *Vorlage für Bug-Issue* verwendet werden. Unterteilt wird der Bug noch bei seinem Auftreten:
+  * `bug-dev` - Dies ist ein Fehler, der in der Entwicklung aufgetreten ist
+  * `bug-prod` - Dies ist ein Fehler, der in der Produktionsumgebung aufgetreten ist
