@@ -114,3 +114,20 @@ Im folgendem Abschnitt werden die Labels und deren Einsatzweise beschrieben:
 * `bug`- Der Issue bezeichnet einen Fehler in der Software. Hierzu muss die Vorlage *Vorlage für Bug-Issue* verwendet werden. Unterteilt wird der Bug noch bei seinem Auftreten:
   * `bug-dev` - Dies ist ein Fehler, der in der Entwicklung aufgetreten ist
   * `bug-prod` - Dies ist ein Fehler, der in der Produktionsumgebung aufgetreten ist
+* `ui` - Der Issue behandelt mit seiner Anforderung eine Anpassung an der Oberfläche
+* `webservice`- Der Issue behandelt mit seiner Anforderung eine Anpassung an dem Web-Service
+
+## Vorlage für die Erstellung von Pull Requests
+
+### Titel
+```
+Pull Request-Anforderung für {Branch-Name} - Issue: #{issueid}
+```
+
+### Beschreibung
+
+```
+Pull Request-Anforderung für **{Branch-Name}**
+
+Zugehöriger Issue: **#{issueid}**
+```
