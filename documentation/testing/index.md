@@ -8,4 +8,4 @@ Komponenten:
 
 #### Models
 
-* [EMailAdresse](components/WebApi.Test/Models/EMailAdresse.md)
+* [EMailAdresse](./components/WebApi.Test/Models/EMailAdresse.md)
