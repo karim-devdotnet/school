@@ -8,9 +8,11 @@ Im folgendem Dokument werden die Testfälle für das Objekt **EMailAdresse** bes
 
 Dieser Testfall testet die E-Mail-Adresse `test@test.de`auf ihre Gültigkeit.
 
-**Art**: Positiv-Test
+### 1.2 Art
 
-### 1.2 Implementierung
+**Unit-Test** (Positiv-Test)
+
+### 1.3 Implementierung
 
 ```csharp
 EMailAdresse adresse = new EMailAdresse();
@@ -24,9 +26,11 @@ Assert.True(adresse.IsValid);
 
 Dieser Testfall testet die E-Mail-Adresse `test-test.de` auf ihre Ungültigkeit.
 
-**Art**: Negativ-Test
+### 2.2 Art
 
-### 2.2 Implementierung
+**Unit-Test** (Negativ-Test)
+
+### 2.3 Implementierung
 
 ```csharp
 EMailAdresse adresse = new EMailAdresse();
