@@ -16,11 +16,11 @@ Symbole kennzeichnen Aufgaben in einem Issue, die umzusetzen oder nicht benötig
 
 ## Vorlage für Feature-Issue:
 
-Siehe [ISSUE_TEMPLATE.md](../../.github/ISSUE_TEMPLATE.de)
+Siehe [ISSUE_TEMPLATE.md](../../.github/ISSUE_TEMPLATE.md)
 
 ## Vorlage für Bug-Issue:
 
-Siehe [ISSUE_TEMPLATE.md](../../.github/ISSUE_TEMPLATE.de)
+Siehe [ISSUE_TEMPLATE.md](../../.github/ISSUE_TEMPLATE.md)
 
 ## Vorlagen für das Schließen von Issues:
 
