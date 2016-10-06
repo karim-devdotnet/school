@@ -16,92 +16,38 @@ Symbole kennzeichnen Aufgaben in einem Issue, die umzusetzen oder nicht benötig
 
 ## Vorlage für Feature-Issue:
 
-```
-**Anforderung:** *Anforderungsbeschreibung*
-
-**Betroffene Komponenten:**
-
-* WebApi (symbol)
-  * WebApi.Model (symbol)
-  * WebApi.Test (symbol)
-* WebClient (symbol)
-
-**Dokumentationsanpassungen:**
-
-* Beschreibungs-Dokumentationen
-  * Architektur-Handbuch (symbol)
-  * Online-Handbuch (symbol)
-  * Kontenxt-Hilfe (symbol)
-  * Sicherheits-Handbuch (symbol)
-* Deployment-Handbuch (symbol)
-* Build-Prozess (symbol)
-* Testfall-Dokumentation (symbol)
-
-**Testfälle:**
-
-* *Komponente 1*
-  * *Testfall 1* - *Testfallbeschreibung*
-  * *Testfall 2* - *Testfallbeschreibung*
-```
+Siehe [ISSUE_TEMPLATE.md](../../.github/ISSUE_TEMPLATE.de)
 
 ## Vorlage für Bug-Issue:
 
-```
-**Fehler:** *Fehlerbeschreibung*
-
-**StackTrace *(wenn vorhanden):***
-
-**Betroffene Komponenten:**
-
-* WebApi (symbol)
-  * WebApi.Model (symbol)
-  * WebApi.Test (symbol)
-* WebClient (symbol)
-
-**Dokumentationsanpassungen:**
-
-* Beschreibungs-Dokumentationen
-  * Architektur-Handbuch (symbol)
-  * Online-Handbuch (symbol)
-  * Kontenxt-Hilfe (symbol)
-  * Sicherheits-Handbuch (symbol)
-* Deployment-Handbuch (symbol)
-* Build-Prozess (symbol)
-* Testfall-Dokumentation (symbol)
-
-**Testfälle:**
-
-* *Komponente 1*
-  * *Testfall 1* - *Testfallbeschreibung*
-  * *Testfall 2* - *Testfallbeschreibung*
-```
+Siehe [ISSUE_TEMPLATE.md](../../.github/ISSUE_TEMPLATE.de)
 
 ## Vorlagen für das Schließen von Issues:
 
 ```
 **Betroffene Komponenten:**
 
-* WebApi (symbol)
-  * WebApi.Model (symbol)
-  * WebApi.Test (symbol)
-* WebClient (symbol)
+* [ ] WebApi (symbol)
+  * [ ] WebApi.Model (symbol)
+  * [ ] WebApi.Test (symbol)
+* [ ] WebClient (symbol)
 
 **Dokumentationsanpassungen:**
 
-* Beschreibungs-Dokumentationen angepasst
-  * Architektur-Handbuch (symbol)
-  * Online-Handbuch (symbol)
-  * Kontenxt-Hilfe (symbol)
-  * Sicherheits-Handbuch (symbol)
-* Deployment-Handbuch (symbol)
-* Build-Prozess (symbol)
-* Testfall-Dokumentation (symbol)
+* [ ] Beschreibungs-Dokumentationen angepasst
+  * [ ] Architektur-Handbuch (symbol)
+  * [ ] Online-Handbuch (symbol)
+  * [ ] Kontenxt-Hilfe (symbol)
+  * [ ] Sicherheits-Handbuch (symbol)
+* [ ] Deployment-Handbuch (symbol)
+* [ ] Build-Prozess (symbol)
+* [ ] Testfall-Dokumentation (symbol)
 
 **Testfälle erstellt:**
 
-* *Komponente 1*
-  * *Testfall 1* - *Testfallbeschreibung*
-  * *Testfall 2* - *Testfallbeschreibung*
+* [ ] *Komponente 1*
+  * [ ] *Testfall 1* - *Testfallbeschreibung*
+  * [ ] *Testfall 2* - *Testfallbeschreibung*
 ```
 
 ## Labels
@@ -116,6 +62,9 @@ Im folgendem Abschnitt werden die Labels und deren Einsatzweise beschrieben:
   * `bug-prod` - Dies ist ein Fehler, der in der Produktionsumgebung aufgetreten ist
 * `ui` - Der Issue behandelt mit seiner Anforderung eine Anpassung an der Oberfläche
 * `webservice`- Der Issue behandelt mit seiner Anforderung eine Anpassung an dem Web-Service
+* `Prio Hoch` - Dieser Issue hat eine hohe Priorität
+* `Prio Mittel` - Dieser Issue hat eine mittlere Priorität
+* `Prio Niedrig` - Dieser Issue hat eine niedrige Priorität
 
 ## Vorlage für die Erstellung von Pull Requests
 
