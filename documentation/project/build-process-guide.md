@@ -42,7 +42,7 @@ Ausgeführt werden muss die Datei ```build.ps1``` im Root der Quellcodeverwaltun
 
 ## Übersicht
 
-|                    | Travis CI | Windows (PowerShell) |
-| -----------: | :-------: | :--------------------: |
-| WebApi       | &#x25CF; | &#x25CF; |
-| WebClient   | &#x25CF; | &#x25CF; |
+|                    | Travis CI | AppVeyor | Windows (PowerShell) |
+| -----------: | :-------: | :------: | :--------------------: |
+| WebApi       | &#x25CF; | &#x25CF; | &#x25CF; |
+| WebClient   | &#x25CF; | &#x25CF; | &#x25CF; |
