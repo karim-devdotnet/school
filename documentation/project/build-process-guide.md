@@ -21,7 +21,7 @@ Im Skript ```.travis.yml``` wird zum Build eine ```build.sh``` aufgerufen, die w
 
 ## AppVeyor
 
-Die Konfigurationsdatei ```appveyor.yml``` wurde im Root der Quellcodeverwaltung abgelegt, damit Travis CI die Datei über GitHub automatisch auslesen und Builds erzeugen kann.
+Die Konfigurationsdatei ```appveyor.yml``` wurde im Root der Quellcodeverwaltung abgelegt, damit AppVeyor die Datei über GitHub automatisch auslesen und Builds erzeugen kann.
 
 Builds werden nur mit AppVeyor erzeugt, wenn:
 
