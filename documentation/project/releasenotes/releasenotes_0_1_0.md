@@ -1,4 +1,6 @@
-# Features
+# Releasenotes für Version 0.1.0
+
+## Features
 
 * #1 - Entwicklungsumgebung einrichten `environment`
 * #4 - Dokumentationsumgebung aufbauen `documentation`
