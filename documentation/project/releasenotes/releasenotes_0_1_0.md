@@ -1,6 +1,6 @@
 # Features
 
-* [#1](/issues/1) - Entwicklungsumgebung einrichten `environment`
+* #1 - Entwicklungsumgebung einrichten `environment`
 * #4 - Dokumentationsumgebung aufbauen `documentation`
 * #5 - Build-Umgebung einrichten `documentation`, `environment`, `feature`
 * #6 - Objektmodell für **Schüler**, **Lehrer**, **Eltern/Vormund**, **Verwaltungsangestellte** anlegen `feature`, `Person`, `Schüler`
