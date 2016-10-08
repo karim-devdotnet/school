@@ -6,6 +6,40 @@ Dieses Dokument ist das Einstiegs-Dokument für die Testfälle.
 
 Es wird das Prinzip **Test First** angewandt. Das heißt, es wird erst die Anforderung im [Issue](../project/issue-guide.md) und im Beschreibungs-Dokument festgehalten, dann die Testfälle beschrieben und erstellt und dann die eigentliche Implementierung durchgeführt.
 
+## Implementierung
+
+### Produkt
+
+Verwendet wird das Produkt [xunit](https://xunit.github.io/).
+
+Dies wird der NuGet installiert:
+
+> PM> Install-Package xunit -Version 2.2.0-beta2-build3300 -Pre
+> PM> Install-Package dotnet-test-xunit -Pre
+
+In der Datei `project.json` wird folgender Code verwendet, damit `xunit` als **testrunner** verwendet wird:
+
+```json
+{
+    "testRunner": "xunit"
+}
+```
+
+### Hilfsklassen
+
+#### TestFixture
+
+Die Klasse `TestFixture` wird verwendet, um für Testklassen eine Datenbank-Verbindung aufzubauen, eine Test-Datenbank anzulegen und diese am Ende der Tests wieder zu löschen.
+
+**Verwendung:**
+
+```csharp
+public class TestClass : IClassFixture<TestFixture>
+{
+    // TestCode
+}
+```
+
 ## Testfall-Dokumente
 
 Komponenten:
