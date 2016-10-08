@@ -8,13 +8,14 @@ Es wird das Prinzip **Test First** angewandt. Das heißt, es wird erst die Anfor
 
 ## Implementierung
 
-### Produkt
+### Test-Framework
 
-Verwendet wird das Produkt [xunit](https://xunit.github.io/).
+Verwendet wird das Test-Framework [xunit](https://xunit.github.io/).
 
 Dies wird der NuGet installiert:
 
 > PM> Install-Package xunit -Version 2.2.0-beta2-build3300 -Pre
+
 > PM> Install-Package dotnet-test-xunit -Pre
 
 In der Datei `project.json` wird folgender Code verwendet, damit `xunit` als **testrunner** verwendet wird:
