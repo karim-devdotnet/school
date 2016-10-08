@@ -32,12 +32,34 @@ In der Datei `project.json` wird folgende Einstellung verwendet, damit `xunit` a
 
 Die Klasse `TestFixture` wird verwendet, um für Testklassen eine Datenbank-Verbindung aufzubauen, eine Test-Datenbank anzulegen und diese am Ende der Tests wieder zu löschen.
 
-**Verwendung:**
+##### Verwendung
 
 ```csharp
 public class TestClass : IClassFixture<TestFixture>
 {
     // TestCode
+}
+```
+
+##### Test-Methode
+
+Um eine Test-Methode zu deklarieren, muss das Attribut `Fact` an eine **öffentlich** Methode geschrieben werden.
+
+**Beispiel:**
+
+```csharp
+public class EMailAdresseTest : IClassFixture<TestFixture>
+{
+    /// <summary>
+    /// Testen der E-Mail-Adresse auf ihre Gültigkeit
+    /// </summary>
+    [Fact]
+    public void ValidEMailAdresse()
+    {
+        EMailAdresse adresse = new EMailAdresse();
+        adresse.Adresse = "test@test.de";
+        Assert.True(adresse.IsValid);
+    }
 }
 ```
 
