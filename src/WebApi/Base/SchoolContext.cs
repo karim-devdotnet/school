@@ -35,6 +35,21 @@ namespace WebApi.Base
         }
 
         /// <summary>
+        /// Erstellt eine Test-Datenbank
+        /// </summary>
+        /// <param name="databaseName"></param>
+        public void CreateTestDatabase()
+        {
+            _mongoClient = new MongoClient(ConnectionString);
+
+            if(_mongoClient != null && !string.IsNullOrEmpty(DatabaseName) && DatabaseName.StartsWith("Test_"))
+            {
+                IMongoDatabase db = _mongoClient.GetDatabase(DatabaseName);
+                db.CreateCollection("_test_");
+            }
+        }
+
+        /// <summary>
         /// Singleton-Instanz mit ConnectionString und der Name der Datenbank
         /// </summary>
         /// <param name="connectionString">Der ConnectionString zu der MongoDatenbank</param>
@@ -104,6 +119,18 @@ namespace WebApi.Base
                 _mongoClient = new MongoClient(ConnectionString);
             }
             return _mongoClient;
+        }
+
+        /// <summary>
+        /// Löscht die Datenbank
+        /// </summary>
+        /// <param name="name"></param>
+        public void DropDatabase(string name)
+        {
+            if(_mongoClient != null && !String.IsNullOrEmpty(name) && name.StartsWith("Test_"))
+            {
+                _mongoClient.DropDatabase(name);
+            }
         }
 
         /// <summary>

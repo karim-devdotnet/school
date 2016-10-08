@@ -8,13 +8,13 @@ using Xunit;
 
 namespace WebApi.Test.Models
 {
-    public static class EMailAdresseTest
+    public class EMailAdresseTest : IClassFixture<TestFixture>
     {
         /// <summary>
         /// Testen der E-Mail-Adresse auf ihre Gültigkeit
         /// </summary>
         [Fact]
-        public static void ValidEMailAdresse()
+        public void ValidEMailAdresse()
         {
             EMailAdresse adresse = new EMailAdresse();
             adresse.Adresse = "test@test.de";
@@ -25,7 +25,7 @@ namespace WebApi.Test.Models
         /// Testen der E-Mail-Adresse auf ihre Ungültigkeit
         /// </summary>
         [Fact]
-        public static void InvalidEMailAdresse()
+        public void InvalidEMailAdresse()
         {
             EMailAdresse adresse = new EMailAdresse();
             adresse.Adresse = "test-test.de";

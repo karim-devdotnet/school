@@ -3,5 +3,7 @@ branches:
   only:
   - master
   - develop
+services:
+  - mongodb
 build_script:
 - ps: . ./build.ps1
