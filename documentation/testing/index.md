@@ -18,7 +18,7 @@ Dies wird der NuGet installiert:
 
 > PM> Install-Package dotnet-test-xunit -Pre
 
-In der Datei `project.json` wird folgender Code verwendet, damit `xunit` als **testrunner** verwendet wird:
+In der Datei `project.json` wird folgende Einstellung verwendet, damit `xunit` als **testrunner** verwendet wird:
 
 ```json
 {
