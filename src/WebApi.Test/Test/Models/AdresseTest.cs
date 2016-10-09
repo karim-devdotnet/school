@@ -27,7 +27,7 @@ namespace WebApi.Test.Test.Models
                 BsonDocument allFilter = new BsonDocument();
                 SchoolContext.Instance().GetCollection<Adresse>().DeleteMany(allFilter);
 
-                SchoolContext.Instance().SaveItem<Adresse>(adresse, SchoolContext.Instance().GetCollection<Adresse>());
+                SchoolContext.Instance().SaveItem<Adresse>(adresse);
                 Assert.True(true);
             }
             catch(Exception)

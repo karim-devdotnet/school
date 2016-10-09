@@ -10,6 +10,12 @@ Im folgendem Dokument werden die Testfälle für das Objekt **{Objektname}** bes
 
 (Bsp.: *Dieser Testfall testet die E-Mail-Adresse `test@test.de`auf ihre Gültigkeit.*)
 
+### 1.1.1 Testdaten
+
+| Attribut |
+| :--- |
+| *wert* |
+
 ### 1.2 Art
 
 {**Unit-Test**, **Komponenten-Test**, **Integrationstest**, **Systemtest**} *Positiv-Test* / *Negativ-Test*
