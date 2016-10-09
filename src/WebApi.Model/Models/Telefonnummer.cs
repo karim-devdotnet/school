@@ -13,7 +13,7 @@ namespace WebApi.Models
     /// <summary>
     /// Klasse für Telefonnummer
     /// </summary>
-    public class Telefonnummer
+    public class Telefonnummer : ModelBaseObject
     {
         public string Nummer
         {

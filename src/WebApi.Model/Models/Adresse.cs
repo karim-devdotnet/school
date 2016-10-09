@@ -13,7 +13,7 @@ namespace WebApi.Models
     /// <summary>
     /// Klasse für eine Adrese
     /// </summary>
-    public class Adresse
+    public class Adresse : ModelBaseObject
     {
         /// <summary>
         /// Der Ort

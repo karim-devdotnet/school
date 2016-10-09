@@ -4,6 +4,7 @@
  * School
 */
 using Microsoft.Extensions.Configuration;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -45,7 +46,16 @@ namespace WebApi.Base
             if(_mongoClient != null && !string.IsNullOrEmpty(DatabaseName) && DatabaseName.StartsWith("Test_"))
             {
                 IMongoDatabase db = _mongoClient.GetDatabase(DatabaseName);
-                db.CreateCollection("_test_");
+
+                string testCollectionName = "_test_";
+
+                List<BsonDocument> listOfCollection = db.ListCollections().ToList();
+                BsonDocument testCollection = listOfCollection.FirstOrDefault(a => a.GetValue("name").AsString == testCollectionName);
+
+                if(testCollection == null || !testCollection.Any())
+                {
+                    db.CreateCollection(testCollectionName);
+                }
             }
         }
 
@@ -137,21 +147,40 @@ namespace WebApi.Base
         /// Gibt eine IMongoCollection anhand des Names der Liste zurück
         /// </summary>
         /// <typeparam name="TDocument">Das Dokument, was ausgelesen werden soll</typeparam>
-        /// <param name="name"></param>
+        /// <param name="name">Der Name der Collection. Wenn der Name null oder leer ist, wird der Name von TDcoument verwendet</param>
         /// <param name="settings"></param>
         /// <returns></returns>
-        public IMongoCollection<TDocument> GetCollection<TDocument>(string name, MongoCollectionSettings settings = null)
+        public IMongoCollection<TDocument> GetCollection<TDocument>(string name = null, MongoCollectionSettings settings = null)
             where TDocument : ModelBaseObject
         {
-            return DatabaseInstance.GetCollection<TDocument>(name, settings);
+            string collectionName = name;
+            if(String.IsNullOrEmpty(collectionName))
+            {
+                collectionName = typeof(TDocument).Name;
+            }
+            return DatabaseInstance.GetCollection<TDocument>(collectionName, settings);
         }
 
+        /// <summary>
+        /// Ein Item in einer Collection speichern
+        /// </summary>
+        /// <typeparam name="TDocument">Der Typ des Item</typeparam>
+        /// <param name="document">Das Item</param>
+        /// <param name="collection">Die Collection, in der das Item abgelegt werden soll</param>
+        /// <returns></returns>
         public async Task<bool> SaveItem<TDocument>(TDocument document, IMongoCollection<TDocument> collection)
             where TDocument : ModelBaseObject
         {
             return await SaveItems(new List<TDocument>() { document }, collection);
         }
 
+        /// <summary>
+        /// Speichert mehrere Items in einer Collection
+        /// </summary>
+        /// <typeparam name="TDocument">Der Typ des Item</typeparam>
+        /// <param name="documents">Die Items</param>
+        /// <param name="collection">Die Collection, in der die Items abgelegt werden sollen</param>
+        /// <returns></returns>
         public async Task<bool> SaveItems<TDocument>(List<TDocument> documents, IMongoCollection<TDocument> collection)
             where TDocument : ModelBaseObject
         {
