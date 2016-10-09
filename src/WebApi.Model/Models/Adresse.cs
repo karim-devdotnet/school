@@ -15,6 +15,8 @@ namespace WebApi.Models
     /// </summary>
     public class Adresse : ModelBaseObject
     {
+        public const string C_LAND_DEUTSCHLAND = "EUROPA_DEUTSCHLAND";
+
         /// <summary>
         /// Der Ort
         /// </summary>
@@ -48,19 +50,55 @@ namespace WebApi.Models
         }
 
         /// <summary>
-        /// Das Land
+        /// Das Bundesland
         /// </summary>
-        public string Land
+        public Bundesland Bundesland
         {
             get; set;
         }
 
         /// <summary>
-        /// Das Bundesland
+        /// Gibt true zurück, wenn alle Pflichtfelder gefüllt sind
         /// </summary>
-        public string Bundesland
+        public bool IstGueltig
         {
-            get; set;
+            get
+            {
+                return
+                    !String.IsNullOrEmpty(Ort) &&
+                    !String.IsNullOrEmpty(Strasse) &&
+                    IstPostleitzahlGueltig &&
+                    !String.IsNullOrEmpty(Hausnummer) &&
+                    IstLandGueltig &&
+                    IstBundeslandGueltig;
+            }
+        }
+
+        /// <summary>
+        /// Gibt true zurück, wenn es für das Land die korrekte Postleitzahl angegeben wurde. Unterstützt wird derzeit nur Deutschland
+        /// </summary>
+        public bool IstPostleitzahlGueltig
+        {
+            get
+            {
+                return !String.IsNullOrEmpty(Postleitzahl) && IstLandGueltig && Postleitzahl.Length == 5;
+            }
+        }
+
+        public bool IstLandGueltig
+        {
+            get
+            {
+                return Bundesland != null && Bundesland.Land != null && Bundesland.Land.Ident == C_LAND_DEUTSCHLAND;
+            }
+        }
+
+        public bool IstBundeslandGueltig
+        {
+            get
+            {
+                return Bundesland != null;
+            }
         }
     }
 }

@@ -28,7 +28,7 @@ namespace WebApi.Models
             get; set;
         }
 
-        public bool IsValid
+        public bool IstGueltig
         {
             get
             {

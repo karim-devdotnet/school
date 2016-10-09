@@ -3,6 +3,7 @@
  * 2016 - 2016
  * School
 */
+using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using WebApi.Base;
@@ -16,27 +17,38 @@ namespace WebApi.Test.Test.Models
     /// </summary>
     public class AdresseTest : IClassFixture<TestFixture>
     {
-        [Theory, MemberData("GueltigeAdresseSpeichernDaten")]
+        [Theory, MemberData(nameof(GueltigeAdresseDaten))]
         [Trait("Komponente", "Adresse")]
         [Trait("UnitTestArt", "Positiv-Test")]
         public void AdresseSpeichern(Adresse adresse)
         {
             try
             {
+                BsonDocument allFilter = new BsonDocument();
+                SchoolContext.Instance().GetCollection<Adresse>().DeleteMany(allFilter);
+
                 SchoolContext.Instance().SaveItem<Adresse>(adresse, SchoolContext.Instance().GetCollection<Adresse>());
                 Assert.True(true);
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 Assert.False(false);
             }
         }
+
+        [Theory, MemberData(nameof(GueltigeAdresseDaten))]
+        [Trait("Komponente", "Adresse")]
+        [Trait("UnitTestArt", "Positiv-Test")]
+        public void GueltigeAdresse(Adresse adresse)
+        {
+            Assert.True(adresse.IstGueltig);
+        }
         
         /// <summary>
-         /// Gültige E-Mail-Adressen
-         /// </summary>
-         /// <returns></returns>
-        public static IEnumerable<object[]> GueltigeAdresseSpeichernDaten()
+        /// Gültige E-Mail-Adressen
+        /// </summary>
+        /// <returns></returns>
+        public static IEnumerable<object[]> GueltigeAdresseDaten()
         {
             yield return new object[]
             {
@@ -44,8 +56,9 @@ namespace WebApi.Test.Test.Models
                 {
                     Strasse = "Musterstraße",
                     Hausnummer = "42",
-                    Bundesland = "Sachsen",
-                    Land = "Deutschland"
+                    Bundesland = new Bundesland() { Ident = "EUROPA_DEUTSCHLAND_SACHSEN", Name = "Sachsen", Land = new WebApi.Models.Land() { Ident = "EUROPA_DEUTSCHLAND", Name = "Deutschland" } },
+                    Ort = "Musterhausen",
+                    Postleitzahl = "12345"
                 }
             };
         }

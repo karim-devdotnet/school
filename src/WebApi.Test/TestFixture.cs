@@ -15,7 +15,7 @@ namespace WebApi.Test
         /// </summary>
         public TestFixture()
         {
-            _databaseName = String.Format("Test_{0}", DateTime.Now.ToString("yyyyMMddHHmmss"));
+            _databaseName = String.Format("Test_{0}", DateTime.Now.ToString("yyyyMMdd_HHmmss_ffff_" + Guid.NewGuid().ToString().Substring(0, 8)));
             SchoolContext.Instance("mongodb://localhost:27017", _databaseName);
             SchoolContext.Instance().CreateTestDatabase();
         }

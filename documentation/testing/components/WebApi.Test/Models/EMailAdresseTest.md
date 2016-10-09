@@ -31,7 +31,7 @@ public void GueltigeEMailAdressen(string emailadresse)
 {
     EMailAdresse adresse = new EMailAdresse();
     adresse.Adresse = emailadresse;
-    Assert.True(adresse.IsValid);
+    Assert.True(adresse.IstGueltig);
 }
 ```
 
@@ -66,6 +66,6 @@ public void UngueltigeEMailAdressen(string emailadresse)
 {
     EMailAdresse adresse = new EMailAdresse();
     adresse.Adresse = emailadresse;
-    Assert.False(adresse.IsValid);
+    Assert.False(adresse.IstGueltig);
 }
 ```

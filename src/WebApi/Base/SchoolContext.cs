@@ -175,6 +175,18 @@ namespace WebApi.Base
         }
 
         /// <summary>
+        /// Ein Item in einer Collection speichern
+        /// </summary>
+        /// <typeparam name="TDocument">Der Typ des Item</typeparam>
+        /// <param name="document">Das Item</param>
+        /// <returns></returns>
+        public async Task<bool> SaveItem<TDocument>(TDocument document)
+            where TDocument : ModelBaseObject
+        {
+            return await SaveItem<TDocument>(document, GetCollection<TDocument>());
+        }
+
+        /// <summary>
         /// Speichert mehrere Items in einer Collection
         /// </summary>
         /// <typeparam name="TDocument">Der Typ des Item</typeparam>

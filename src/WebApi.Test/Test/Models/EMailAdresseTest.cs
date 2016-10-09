@@ -16,14 +16,14 @@ namespace WebApi.Test.Models
         /// Eine Theorie für gültige E-Mail-Adresse
         /// </summary>
         /// <param name="emailadresse"></param>
-        [Theory, MemberData("GueltigeEMailAdressdaten")]
+        [Theory, MemberData(nameof(GueltigeEMailAdressdaten))]
         [Trait("Komponente", "EMailAdresse")]
         [Trait("UnitTestArt", "Positiv-Test")]
         public void GueltigeEMailAdressen(string emailadresse)
         {
             EMailAdresse adresse = new EMailAdresse();
             adresse.Adresse = emailadresse;
-            Assert.True(adresse.IsValid);
+            Assert.True(adresse.IstGueltig);
         }
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace WebApi.Test.Models
         /// Eine Theorie für ungültige EMail-Adresse
         /// </summary>
         /// <param name="emailadresse"></param>
-        [Theory, MemberData("UngueltigeEMailAdressdaten")]
+        [Theory, MemberData(nameof(UngueltigeEMailAdressdaten))]
         [Trait("Komponente", "EMailAdresse")]
         [Trait("UnitTestArt", "Negativ-Test")]
         public void UngueltigeEMailAdressen(string emailadresse)
         {
             EMailAdresse adresse = new EMailAdresse();
             adresse.Adresse = emailadresse;
-            Assert.False(adresse.IsValid);
+            Assert.False(adresse.IstGueltig);
         }
 
         /// <summary>

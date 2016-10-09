@@ -19,6 +19,14 @@ namespace WebApi.Models
         }
 
         /// <summary>
+        /// Der fachliche Identifizierer des Objektes
+        /// </summary>
+        public string Ident
+        {
+            get; set;
+        }
+
+        /// <summary>
         /// Das Datum, bei dem das Objekt entstanden ist
         /// </summary>
         public DateTime CreatedAt
