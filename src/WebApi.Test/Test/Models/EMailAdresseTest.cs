@@ -4,14 +4,23 @@
  * School
 */
 using System.Collections.Generic;
+using System.Diagnostics;
 using WebApi.Models;
 using Xunit;
 using Xunit.Extensions;
 
 namespace WebApi.Test.Models
 {
+    [Collection("E-Mail-Adressen")]
     public class EMailAdresseTest : IClassFixture<TestFixture>
     {
+        TestFixture _fixture;
+        public EMailAdresseTest(TestFixture fixture)
+        {
+            _fixture = fixture;
+            _fixture.TestClassName = nameof(EMailAdresseTest);
+        }
+
         /// <summary>
         /// Eine Theorie für gültige E-Mail-Adresse
         /// </summary>

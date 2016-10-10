@@ -20,6 +20,11 @@ namespace WebApi.Test
             SchoolContext.Instance().CreateTestDatabase();
         }
 
+        public string TestClassName
+        {
+            get; set;
+        }
+
         /// <summary>
         /// TestFixture aufräumen
         /// </summary>
