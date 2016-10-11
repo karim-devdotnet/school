@@ -7,3 +7,8 @@ services:
   - mongodb
 build_script:
 - ps: . ./build.ps1
+platform: Any CPU
+configuration: Release
+artifacts:
+  - path: artifacts/output.zip
+max_jobs: 1

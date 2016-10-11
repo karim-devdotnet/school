@@ -38,6 +38,13 @@ Folgende Dienste werden genutzt:
 
 * MongoDB 3.0.4
 
+### Werte
+
+* `version: 1.0.{build}` - Es wird für die Version 1.0.* ein Build erstellt
+* `platform: Any CPU` - Ziel-Plattform **Any CPU**
+* `configuration: Release` - Es wird die Build-Konfiguration **Release** verwendet
+* `max_jobs: 1` - Maximal ein konkurrierender Job
+
 ### Skripte
 
 Es werden die gleichen Skripte ausgeführt, die im Abschnitt [Windows (Powershell)](#windows-powershell) beschrieben sind.
