@@ -4,10 +4,10 @@
 
   "dependencies": {
     "NETStandard.Library": "1.6.0",
-    "NLog": "4.3.9",
     "dotnet-test-xunit": "2.2.0-preview2-build1029",
     "xunit": "2.2.0-beta2-build3300",
-    "WebApi": "0.1.0"
+    "WebApi": "0.1.0",
+    "NLog": "4.3.10"
   },
 
   "frameworks": {
