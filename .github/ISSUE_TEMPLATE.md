@@ -19,6 +19,7 @@ Detaillierte Beschreibung
 * [ ] Deployment-Handbuch (symbol)
 * [ ] Build-Prozess (symbol)
 * [ ] Testfall-Dokumentation (symbol)
+* [ ] Release-Notes (symbol)
 
 ## Testfälle
 

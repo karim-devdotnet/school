@@ -15,3 +15,5 @@
 * #27 - Erstellung Testfall-Dokumentation (Erster Entwurf) `documentation`
 * #29 - Build-Process-Guide um AppVeyor erweitern `documentation`
 * #31 - Anpassung *-Guide (Vorlagen, Labels) `documentation`
+* #35 - .gitmessage.txt-Datei anlegen `documentation`, `environment`
+* #37 - Release-Notes um ISSUE_TEMPLATE.md erweitern `documentation`
