@@ -20,4 +20,7 @@ install:
   - export PATH="$DOTNET_INSTALL_DIR:$PATH"  
 script:
   - ./build.sh
-  - sonar-scanner -Dsonar.login=$SONAR_TOKEN
+  - ./analyseSonarQube.sh
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
