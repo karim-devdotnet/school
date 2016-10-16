@@ -17,4 +17,5 @@
 * #31 - Anpassung *-Guide (Vorlagen, Labels) `documentation`
 * #35 - .gitmessage.txt-Datei anlegen `documentation`, `environment`
 * #37 - Release-Notes um ISSUE_TEMPLATE.md erweitern `documentation`
+* #39 - SonarQube in Travis CI integrieren `environment`
 * #15 - Personen erweitern `feature`, `Person`, `Schüler`
