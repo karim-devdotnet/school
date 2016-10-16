@@ -21,7 +21,7 @@ Im Skript ```.travis.yml``` wird zum Build eine ```build.sh``` aufgerufen, die w
 
 #### SonarQube
 
-Es wird innerhalb vom Skript `.travis.yml` das Skript `analyseSonarQube.sh` aufgerufen. Dieses analysiert den Code unterhalb von `src`. Verwendet werden hier die TRAVIS CI-Variablen `SONAR_TOKEN` und `SONAR_HOST_URL`. Diese sind in TRAVIS CI konfiguriert. 
+Es wird innerhalb vom Skript `.travis.yml` das Skript `analyseSonarQube.sh` aufgerufen. Dieses analysiert den Code unterhalb von `src`. Verwendet werden hier die TRAVIS CI-Variablen `SONAR_TOKEN` und `SONAR_HOST_URL`. Diese sind in TRAVIS CI konfiguriert. Weitere Konfigurationen befinden sich in der Datei `pom.xml` [Einführung](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html).  
 
 ## AppVeyor
 
