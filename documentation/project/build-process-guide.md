@@ -19,6 +19,10 @@ Unterstützt wird derzeit nur Linux.
 
 Im Skript ```.travis.yml``` wird zum Build eine ```build.sh``` aufgerufen, die widerum ```build.sh``` jeweils im Ordner ```src/WebApi``` und ```src/WebClient``` aufruft.
 
+#### SonarQube
+
+Es wird innerhalb vom Skript `.travis.yml` das Skript `analyseSonarQube.sh` aufgerufen. Dieses analysiert den Code unterhalb von `src`. Verwendet werden hier die TRAVIS CI-Variablen `SONAR_TOKEN` und `SONAR_HOST_URL`. Diese sind in TRAVIS CI konfiguriert. 
+
 ## AppVeyor
 
 Die Konfigurationsdatei ```appveyor.yml``` wurde im Root der Quellcodeverwaltung abgelegt, damit AppVeyor die Datei über GitHub automatisch auslesen und Builds erzeugen kann.
