@@ -48,7 +48,7 @@ Um eine Test-Methode zu deklarieren, muss das Attribut `Fact` an eine **öffentl
 **Beispiel:**
 
 ```csharp
-public class EMailAdresseTest : IClassFixture<TestFixture>
+public class EMailAdresseTest : IClassFixture<DatabaseTestFixture>
 {
     /// <summary>
     /// Testen der E-Mail-Adresse auf ihre Gültigkeit
