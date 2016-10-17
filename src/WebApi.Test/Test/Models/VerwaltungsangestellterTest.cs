@@ -10,7 +10,7 @@ namespace WebApi.Test.Test.Models
     /// <summary>
     /// Test-Klasse für das Objekt Verwaltungsangestellter
     /// </summary>
-    public class VerwaltungsangestellterTest : IClassFixture<TestFixture>
+    public class VerwaltungsangestellterTest : IClassFixture<DatabaseTestFixture>
     {
     }
 }

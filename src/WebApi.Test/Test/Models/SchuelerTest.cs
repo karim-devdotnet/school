@@ -10,7 +10,7 @@ namespace WebApi.Test.Test.Models
     /// <summary>
     /// Test-Klasse für das Objekt Schueler
     /// </summary>
-    public class SchuelerTest : IClassFixture<TestFixture>
+    public class SchuelerTest : IClassFixture<DatabaseTestFixture>
     {
     }
 }

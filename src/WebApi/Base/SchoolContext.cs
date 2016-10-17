@@ -49,14 +49,26 @@ namespace WebApi.Base
 
                 string testCollectionName = "_test_";
 
-                List<BsonDocument> listOfCollection = db.ListCollections().ToList();
-                BsonDocument testCollection = listOfCollection.FirstOrDefault(a => a.GetValue("name").AsString == testCollectionName);
+                BsonDocument testCollection = GetCollectionByName(db, testCollectionName);
 
                 if(testCollection == null || !testCollection.Any())
                 {
                     db.CreateCollection(testCollectionName);
                 }
             }
+        }
+
+        /// <summary>
+        /// Gibt dir Collection anhand eines Namens zurück
+        /// </summary>
+        /// <param name="db"></param>
+        /// <param name="testCollectionName"></param>
+        /// <returns></returns>
+        private static BsonDocument GetCollectionByName(IMongoDatabase db, string testCollectionName)
+        {
+            List<BsonDocument> listOfCollection = db.ListCollections().ToList();
+            BsonDocument testCollection = listOfCollection.FirstOrDefault(a => a.GetValue("name").AsString == testCollectionName);
+            return testCollection;
         }
 
         /// <summary>

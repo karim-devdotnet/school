@@ -15,7 +15,7 @@ namespace WebApi.Test.Test.Models
     /// <summary>
     /// Test-Klasse für das Objekt Land
     /// </summary>
-    public class LandTest : IClassFixture<TestFixture>
+    public class LandTest : IClassFixture<DatabaseTestFixture>
     {
         [Theory]
         [MemberData(nameof(GueltigeLandDaten))]

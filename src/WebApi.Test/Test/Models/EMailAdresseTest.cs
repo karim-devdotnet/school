@@ -12,10 +12,10 @@ using Xunit.Extensions;
 namespace WebApi.Test.Models
 {
     [Collection("E-Mail-Adressen")]
-    public class EMailAdresseTest : IClassFixture<TestFixture>
+    public class EMailAdresseTest : IClassFixture<DatabaseTestFixture>
     {
-        TestFixture _fixture;
-        public EMailAdresseTest(TestFixture fixture)
+        DatabaseTestFixture _fixture;
+        public EMailAdresseTest(DatabaseTestFixture fixture)
         {
             _fixture = fixture;
             _fixture.TestClassName = nameof(EMailAdresseTest);

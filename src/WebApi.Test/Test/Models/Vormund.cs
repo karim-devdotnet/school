@@ -10,7 +10,7 @@ namespace WebApi.Test.Test.Models
     /// <summary>
     /// Test-Klasse für das Objekt Vormund
     /// </summary>
-    public class VormundTest : IClassFixture<TestFixture>
+    public class VormundTest : IClassFixture<DatabaseTestFixture>
     {
     }
 }

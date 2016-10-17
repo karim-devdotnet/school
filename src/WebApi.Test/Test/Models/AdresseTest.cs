@@ -15,7 +15,7 @@ namespace WebApi.Test.Test.Models
     /// <summary>
     /// Test-Klasse für das Objekt Adresse
     /// </summary>
-    public class AdresseTest : IClassFixture<TestFixture>
+    public class AdresseTest : IClassFixture<DatabaseTestFixture>
     {
         [Theory, MemberData(nameof(GueltigeAdresseDaten))]
         [Trait("Komponente", "Adresse")]

@@ -10,7 +10,7 @@ namespace WebApi.Test.Test.Models
     /// <summary>
     /// Test-Klasse für das Objekt PersonLoginData
     /// </summary>
-    public class PersonLoginDataTest : IClassFixture<TestFixture>
+    public class PersonLoginDataTest : IClassFixture<DatabaseTestFixture>
     {
     }
 }

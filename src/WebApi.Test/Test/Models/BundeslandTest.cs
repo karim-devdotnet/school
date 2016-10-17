@@ -10,7 +10,7 @@ namespace WebApi.Test.Test.Models
     /// <summary>
     /// Test-Klasse für das Objekt Bundesland
     /// </summary>
-    public class BundeslandTest : IClassFixture<TestFixture>
+    public class BundeslandTest : IClassFixture<DatabaseTestFixture>
     {
     }
 }

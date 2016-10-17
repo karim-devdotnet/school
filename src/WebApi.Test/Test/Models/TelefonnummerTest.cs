@@ -10,7 +10,7 @@ namespace WebApi.Test.Test.Models
     /// <summary>
     /// Test-Klasse für das Objekt Telefonnummer
     /// </summary>
-    public class TelefonnummerTest : IClassFixture<TestFixture>
+    public class TelefonnummerTest : IClassFixture<DatabaseTestFixture>
     {
     }
 }
