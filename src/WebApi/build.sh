@@ -8,6 +8,10 @@ dotnet restore ./src/WebApi
 # Ideally we would use the 'dotnet test' command to test netcoreapp and net451 so restrict for now 
 # but this currently doesn't work due to https://github.com/dotnet/cli/issues/3073 so restrict to netcoreapp
 
+dotnet restore ./src/WebApi.Test -fnet460
+
+dotnet build ./src/WebApi.Test -c Release -fnet460
+
 dotnet test ./src/WebApi.Test -c Release -fnet460
 
 # Instead, run directly with mono for the full .net version 

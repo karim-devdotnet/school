@@ -29,16 +29,24 @@ $webApiNameString = "WebApi";
 $webClientNameString = "WebClient";
 
 Write-Host -ForegroundColor Yellow "Start restore WebApi";
-dotnet --verbose restore $PSScriptRoot/src/$webApiNameString -c Release;
+dotnet --verbose restore $PSScriptRoot/src/$webApiNameString;
 Write-Host -ForegroundColor Yellow "Ende restore WebApi";
 
 Write-Host -ForegroundColor Yellow "Start build WebApi";
 dotnet --verbose build $PSScriptRoot/src/$webApiNameString -c Release;
 Write-Host -ForegroundColor Yellow "Ende build WebApi";
 
-Write-Host -ForegroundColor Yellow "Start test WebApi";
+Write-Host -ForegroundColor Yellow "Start restore WebApi.Test";
+dotnet --verbose restore $PSScriptRoot/src/$webApiNameString.Test;
+Write-Host -ForegroundColor Yellow "Ende restore WebApi.Test";
+
+Write-Host -ForegroundColor Yellow "Start build WebApi.Test";
+dotnet --verbose build $PSScriptRoot/src/$webApiNameString.Test;
+Write-Host -ForegroundColor Yellow "Ende build WebApi.Test";
+
+Write-Host -ForegroundColor Yellow "Start test WebApi.Test";
 dotnet --verbose test $PSScriptRoot/src/$webApiNameString.Test;
-Write-Host -ForegroundColor Yellow "Ende test WebApi";
+Write-Host -ForegroundColor Yellow "Ende test WebApi.Test";
 
 Write-Host -ForegroundColor Yellow "Start restore WebClient";
 dotnet --verbose restore $PSScriptRoot/src/$webClientNameString;
