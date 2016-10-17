@@ -49,7 +49,7 @@ dotnet --verbose restore $PSScriptRoot/src/$webApiNameString.Test;
 Write-Host -ForegroundColor Yellow "Ende restore WebApi.Test";
 
 Write-Host -ForegroundColor Yellow "Start build WebApi.Test";
-dotnet --verbose build $PSScriptRoot/src/$webApiNameString.Test;
+dotnet --verbose build $PSScriptRoot/src/$webApiNameString.Test -c Release;
 Write-Host -ForegroundColor Yellow "Ende build WebApi.Test";
 
 Write-Host -ForegroundColor Yellow "Start test WebApi.Test";
