@@ -29,7 +29,7 @@ $webApiNameString = "WebApi";
 $webClientNameString = "WebClient";
 
 Write-Host -ForegroundColor Yellow "Start restore WebApi";
-dotnet --verbose restore $PSScriptRoot/src/$webApiNameString;
+dotnet --verbose restore $PSScriptRoot/src/$webApiNameString -c Release;
 Write-Host -ForegroundColor Yellow "Ende restore WebApi";
 
 Write-Host -ForegroundColor Yellow "Start build WebApi";
