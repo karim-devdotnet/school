@@ -30,7 +30,7 @@ namespace WebApi.Test.Test.Models
                 SchoolContext.Instance().SaveItem<Adresse>(adresse);
                 Assert.True(true);
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 Assert.False(false);
             }
