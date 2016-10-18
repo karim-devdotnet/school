@@ -33,7 +33,7 @@ dotnet --verbose restore $PSScriptRoot/src/$webApiNameString.Model;
 Write-Host -ForegroundColor Yellow "Ende restore WebApi.Model";
 
 Write-Host -ForegroundColor Yellow "Start build WebApi.Model";
-dotnet --verbose build $PSScriptRoot/src/$webApiNameString.Model -c Release -o $buildOutputDirectoryPath/$webApiNameString -f net460;
+dotnet --verbose build $PSScriptRoot/src/$webApiNameString.Model -c Release;
 Write-Host -ForegroundColor Yellow "Ende build WebApi.Model";
 
 Write-Host -ForegroundColor Yellow "Start restore WebApi";
@@ -41,7 +41,7 @@ dotnet --verbose restore $PSScriptRoot/src/$webApiNameString;
 Write-Host -ForegroundColor Yellow "Ende restore WebApi";
 
 Write-Host -ForegroundColor Yellow "Start build WebApi";
-dotnet --verbose build $PSScriptRoot/src/$webApiNameString -c Release -o $buildOutputDirectoryPath/$webApiNameString -f net460;
+dotnet --verbose build $PSScriptRoot/src/$webApiNameString -c Release;
 Write-Host -ForegroundColor Yellow "Ende build WebApi";
 
 Write-Host -ForegroundColor Yellow "Start restore WebApi.Test";
@@ -49,7 +49,7 @@ dotnet --verbose restore $PSScriptRoot/src/$webApiNameString.Test;
 Write-Host -ForegroundColor Yellow "Ende restore WebApi.Test";
 
 Write-Host -ForegroundColor Yellow "Start build WebApi.Test";
-dotnet --verbose build $PSScriptRoot/src/$webApiNameString.Test -c Release -o $buildOutputDirectoryPath/$webApiNameString -f net460;
+dotnet --verbose build $PSScriptRoot/src/$webApiNameString.Test -c Release;
 Write-Host -ForegroundColor Yellow "Ende build WebApi.Test";
 
 Write-Host -ForegroundColor Yellow "Start test WebApi.Test";
