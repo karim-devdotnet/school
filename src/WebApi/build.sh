@@ -10,9 +10,9 @@ dotnet restore ./src/WebApi
 
 dotnet restore ./src/WebApi.Test -fnet460
 
-dotnet build ./src/WebApi.Test -c Release -fnet460
+dotnet build ./src/WebApi.Test -c Release -f net460
 
-dotnet test ./src/WebApi.Test -c Release -fnet460
+dotnet test ./src/WebApi.Test -c Release -f net460
 
 # Instead, run directly with mono for the full .net version 
 dotnet build ./src/WebApi -c Release -f net460
