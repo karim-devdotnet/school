@@ -8,5 +8,13 @@
 
   "frameworks": {
     "net46": {}
+  },
+
+  "runtimes": {
+    "win10-x64": { },
+    "ubuntu.14.04-x64": { },
+    "win81-x64": { },
+    "win8-x64": { },
+    "win7-x64": { }
   }
 }
