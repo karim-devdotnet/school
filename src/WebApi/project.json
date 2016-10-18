@@ -25,7 +25,21 @@
   },
 
   "frameworks": {
-    "net46": { }
+    "net46": {
+      
+    },
+      "netcoreapp1.0": {
+         "dependencies": {
+            "Microsoft.NETCore.App": {
+               "type": "platform",
+               "version": "1.0.0"
+            }
+         },
+         "imports": [
+            "dotnet5.6",
+            "portable-net45+win8"
+         ]
+      }
   },
 
   "buildOptions": {
