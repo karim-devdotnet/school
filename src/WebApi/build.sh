@@ -16,7 +16,8 @@ dotnet restore ./src/WebApi.Test -f net460
 
 dotnet build ./src/WebApi.Test -c Release -f net460
 
-dotnet test ./src/WebApi.Test -c Release -f net460
+# Wird derzeit nicht komplett unterstützt. TODO für die Zukunft
+#dotnet test ./src/WebApi.Test -c Release -f net460
 
 # Instead, run directly with mono for the full .net version 
 dotnet build ./src/WebApi -c Release -f net460
