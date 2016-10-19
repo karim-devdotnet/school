@@ -6,6 +6,10 @@
     "MongoDB.Driver": "2.3.0"
   },
 
+  "frameworks": {
+    "net46": { }
+  },
+
   "runtimes": {
     "win10-x64": { },
     "ubuntu.14.04-x64": { }

@@ -10,6 +10,10 @@
     "NLog": "4.3.10"
   },
 
+  "frameworks": {
+    "net46": { }
+  },
+
   "buildOptions": {
     "copyToOutput": {
       "include": [ "xunit.runner.json" ]
