@@ -24,27 +24,6 @@
     "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.0.0-preview2-final"
   },
 
-  "frameworks": {
-    "netstandard1.5": {
-      "dependencies": {
-        "NETStandard.Library": "1.6.0"
-      },
-      "imports": [
-        "portable-win81+wp81",
-        "portable-net45+wp8",
-        "portable-net45+win8+wp8",
-        "portable-wp81+wpa81",
-        "portable-win81+wp81+wpa81",
-        "portable-net45+win8+wpa81+wp8",
-        "portable-net45+win8",
-        "portable-net45+win8+wpa81",
-        "portable-win81+wpa81",
-        "portable-net451+win81",
-        "portable-net451+win81+wpa81"
-      ]
-    }
-},
-
   "buildOptions": {
     "emitEntryPoint": true,
     "preserveCompilationContext": true

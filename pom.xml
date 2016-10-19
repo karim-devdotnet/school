@@ -15,7 +15,7 @@
 
     <properties>
         <sonar.sources>src</sonar.sources>
-        <sonar.exclusions>src/WebClient/wwwroot/lib/</sonar.exclusions>
+        <sonar.exclusions>src/WebClient/wwwroot/lib/**/*</sonar.exclusions>
     </properties>
 
     <dependencies>
