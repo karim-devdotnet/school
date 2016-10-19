@@ -3,7 +3,6 @@
  * 2016 - 2016
  * School
 */
-using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,22 +10,20 @@ using System.Threading.Tasks;
 
 namespace WebApi.Models
 {
-    public class Person : ModelBaseObject
+    /// <summary>
+    /// Klasse für Telefonnummer
+    /// </summary>
+    public class Telefonnummer : ModelBaseObject
     {
+        public string Nummer
+        {
+            get; set;
+        }
+
         /// <summary>
-        /// Die ID der Person
+        /// Ist die primäre Telefonnummer
         /// </summary>
-        public string PersonID
-        {
-            get; set;
-        }
-
-        public string Vorname
-        {
-            get; set;
-        }
-
-        public string Nachname
+        public bool IstPrimaer
         {
             get; set;
         }

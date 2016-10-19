@@ -15,6 +15,10 @@ Builds werden nur mit Travis CI erzeugt, wenn:
 
 Unterstützt wird derzeit nur Linux.
 
+Folgende Dienste werden genutzt:
+
+* MongoDB 3.0.4
+
 ### Skripte
 
 Im Skript ```.travis.yml``` wird zum Build eine ```build.sh``` aufgerufen, die widerum ```build.sh``` jeweils im Ordner ```src/WebApi``` und ```src/WebClient``` aufruft.
@@ -33,6 +37,17 @@ Builds werden nur mit AppVeyor erzeugt, wenn:
 * ein **Pull Request** angefordert wurde
 
 Unterstützt wird derzeit nur Windows.
+
+Folgende Dienste werden genutzt:
+
+* MongoDB 3.0.4
+
+### Werte
+
+* `version: 1.0.{build}` - Es wird für die Version 1.0.* ein Build erstellt
+* `platform: Any CPU` - Ziel-Plattform **Any CPU**
+* `configuration: Release` - Es wird die Build-Konfiguration **Release** verwendet
+* `max_jobs: 1` - Maximal ein konkurrierender Job
 
 ### Skripte
 

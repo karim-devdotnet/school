@@ -28,10 +28,38 @@ else {
 $webApiNameString = "WebApi";
 $webClientNameString = "WebClient";
 
-dotnet --verbose restore $PSScriptRoot/src/$webApiNameString;
-dotnet --verbose build $PSScriptRoot/src/$webApiNameString -c Release;
-dotnet --verbose pack $PSScriptRoot/src/$webApiNameString -o $buildOutputDirectoryPath/$webApiNameString/;
+Write-Host -ForegroundColor Yellow "Start restore WebApi.Model";
+dotnet --verbose restore $PSScriptRoot/src/$webApiNameString.Model;
+Write-Host -ForegroundColor Yellow "Ende restore WebApi.Model";
 
+Write-Host -ForegroundColor Yellow "Start build WebApi.Model";
+dotnet --verbose build $PSScriptRoot/src/$webApiNameString.Model -c Release;
+Write-Host -ForegroundColor Yellow "Ende build WebApi.Model";
+
+Write-Host -ForegroundColor Yellow "Start restore WebApi";
+dotnet --verbose restore $PSScriptRoot/src/$webApiNameString;
+Write-Host -ForegroundColor Yellow "Ende restore WebApi";
+
+Write-Host -ForegroundColor Yellow "Start build WebApi";
+dotnet --verbose build $PSScriptRoot/src/$webApiNameString -c Release;
+Write-Host -ForegroundColor Yellow "Ende build WebApi";
+
+Write-Host -ForegroundColor Yellow "Start restore WebApi.Test";
+dotnet --verbose restore $PSScriptRoot/src/$webApiNameString.Test;
+Write-Host -ForegroundColor Yellow "Ende restore WebApi.Test";
+
+Write-Host -ForegroundColor Yellow "Start build WebApi.Test";
+dotnet --verbose build $PSScriptRoot/src/$webApiNameString.Test -c Release;
+Write-Host -ForegroundColor Yellow "Ende build WebApi.Test";
+
+Write-Host -ForegroundColor Yellow "Start test WebApi.Test";
+dotnet --verbose test $PSScriptRoot/src/$webApiNameString.Test;
+Write-Host -ForegroundColor Yellow "Ende test WebApi.Test";
+
+Write-Host -ForegroundColor Yellow "Start restore WebClient";
 dotnet --verbose restore $PSScriptRoot/src/$webClientNameString;
-dotnet --verbose build $PSScriptRoot/src/$webClientNameString -c Release;
-dotnet --verbose pack $PSScriptRoot/src/$webClientNameString -o $buildOutputDirectoryPath/$webClientNameString/;
+Write-Host -ForegroundColor Yellow "Ende restore WebClient";
+
+Write-Host -ForegroundColor Yellow "Start restore WebClient";
+dotnet --verbose build $PSScriptRoot/src/$webClientNameString -c Release -o $buildOutputDirectoryPath/$webClientNameString -f netcoreapp1.0;
+Write-Host -ForegroundColor Yellow "Ende restore WebClient";

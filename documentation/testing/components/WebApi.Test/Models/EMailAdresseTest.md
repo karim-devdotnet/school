@@ -2,11 +2,20 @@
 
 Im folgendem Dokument werden die Testfälle für das Objekt **EMailAdresse** beschrieben.
 
-## Testfall 1: **ValidEMailAdresse**
+## Testfall 1: **GueltigeEMailAdressen**
 
 ### 1.1 Beschreibung
 
-Dieser Testfall testet die E-Mail-Adresse `test@test.de`auf ihre Gültigkeit.
+Dieser Testfall testet die E-Mail-Adresse auf ihre Gültigkeit.
+
+#### 1.1.1 Testdaten
+
+| E-Mail-Adresse |
+| :--- |
+| test@test.de |
+| test-test@test.de |
+| test@test-test.de |
+| test-test@test-test.de |
 
 ### 1.2 Art
 
@@ -15,16 +24,33 @@ Dieser Testfall testet die E-Mail-Adresse `test@test.de`auf ihre Gültigkeit.
 ### 1.3 Implementierung
 
 ```csharp
-EMailAdresse adresse = new EMailAdresse();
-adresse.Adresse = "test@test.de";
-Assert.True(adresse.IsValid);
+[Theory, MemberData("GueltigeEMailAdressdaten")]
+[Trait("Komponente", "EMailAdresse")]
+[Trait("UnitTestArt", "Positiv-Test")]
+public void GueltigeEMailAdressen(string emailadresse)
+{
+    EMailAdresse adresse = new EMailAdresse();
+    adresse.Adresse = emailadresse;
+    Assert.True(adresse.IstGueltig);
+}
 ```
 
-## Testfall 2: **InvalidEMailAdresse**
+## Testfall 2: **UngueltigeEMailAdressen**
 
 ### 2.1 Beschreibung
 
-Dieser Testfall testet die E-Mail-Adresse `test-test.de` auf ihre Ungültigkeit.
+Dieser Testfall testet die E-Mail-Adresse auf ihre Ungültigkeit.
+
+#### 2.1.1 Testdaten
+
+| E-Mail-Adresse |
+| :--- |
+| test@testde |
+| test-test.de |
+| test-testde |
+| test@@testde |
+| test@@test.de |
+| testattest.de |
 
 ### 2.2 Art
 
@@ -33,7 +59,13 @@ Dieser Testfall testet die E-Mail-Adresse `test-test.de` auf ihre Ungültigkeit.
 ### 2.3 Implementierung
 
 ```csharp
-EMailAdresse adresse = new EMailAdresse();
-adresse.Adresse = "test-test.de";
-Assert.False(adresse.IsValid);
+[Theory, MemberData("UngueltigeEMailAdressdaten")]
+[Trait("Komponente", "EMailAdresse")]
+[Trait("UnitTestArt", "Negativ-Test")]
+public void UngueltigeEMailAdressen(string emailadresse)
+{
+    EMailAdresse adresse = new EMailAdresse();
+    adresse.Adresse = emailadresse;
+    Assert.False(adresse.IstGueltig);
+}
 ```

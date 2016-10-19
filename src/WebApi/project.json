@@ -1,5 +1,6 @@
 {
   "version": "0.1.0",
+  "testRunner": "xunit",
   "dependencies": {
     "Microsoft.AspNetCore.Mvc": "1.0.1",
     "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
@@ -7,12 +8,16 @@
     "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.0",
     "Microsoft.Extensions.Configuration.FileExtensions": "1.0.0",
     "Microsoft.Extensions.Configuration.Json": "1.0.0",
+    "Microsoft.Extensions.DependencyInjection": "1.0.0",
     "Microsoft.Extensions.Logging": "1.0.0",
     "Microsoft.Extensions.Logging.Console": "1.0.0",
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
     "MongoDB.Driver": "2.3.0",
-    "NLog": "4.3.9"
+    "dotnet-test-xunit": "2.2.0-preview2-build1029",
+    "xunit": "2.2.0-beta2-build3300",
+    "WebApi.Model": "1.0.0-*",
+    "NLog": "4.3.10"
   },
 
   "tools": {
@@ -21,7 +26,7 @@
 
   "frameworks": {
     "net46": { }
-  },
+ },
 
   "buildOptions": {
     "emitEntryPoint": true,
@@ -40,5 +45,10 @@
 
   "scripts": {
     "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
+  },
+
+  "runtimes": {
+    "win10-x64": { },
+    "ubuntu.14.04-x64": { }
   }
 }

@@ -38,7 +38,7 @@ namespace WebApi
             services.AddLogging();
             services.AddOptions();
             services.AddSingleton<IConfiguration>(Configuration);
-            SchoolContext ctx = SchoolContext.Instance(Configuration.GetConnectionString("DefaultMongoConnection"), Configuration.GetValue<string>("DatabaseName"));
+            SchoolContext.Instance(Configuration.GetConnectionString("DefaultMongoConnection"), Configuration.GetValue<string>("DatabaseName"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -13,22 +13,22 @@ Das Produkt *School* ist eine Schulverwaltungssoftware für schulische Einrichtu
 > Attribute:
 
 * LoginData
-  * LoginUserIdent (*E-Mail-Adresse*)
-  * Passwort (*Hashwert*)
-  * LastLogin
-  * Avatar
-* Vorname
-* Nachname
-* Geburtstag
-* Adresse
-  * Straße
-  * Ort
-  * Postleitzahl
-  * Hausnummer
+  * LoginUserIdent (*E-Mail-Adresse*) &#10003;
+  * Passwort (*Hashwert*) &#10003;
+  * LastLogin &#10003;
+  * Avatar &#10003;
+* Vorname &#10003;
+* Nachname &#10003;
+* Geburtstag &#10003;
+* Adresse &#10003;
+  * Straße &#10003;
+  * Ort &#10003;
+  * Postleitzahl &#10003;
+  * Hausnummer &#10003;
 * Kontaktdaten
-  * Telefon/Handy
-  * E-Mail
-  * Slack-Account 
+  * Telefon/Handy &#10003;
+  * E-Mail &#10003;
+  * Slack-Account (*Future*)
 
 ### Schule
 

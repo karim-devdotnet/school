@@ -7,6 +7,8 @@ env:
   - CLI_VERSION=latest
 os:  
   - linux
+services:
+  - mongodb
 # Nur master und develop-Branches verwenden
 branches:
   only:

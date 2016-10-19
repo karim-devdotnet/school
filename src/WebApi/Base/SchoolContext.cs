@@ -4,6 +4,7 @@
  * School
 */
 using Microsoft.Extensions.Configuration;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -32,6 +33,42 @@ namespace WebApi.Base
         {
             ConnectionString = connectionString;
             DatabaseName = databaseName;
+        }
+
+        /// <summary>
+        /// Erstellt eine Test-Datenbank
+        /// </summary>
+        /// <param name="databaseName"></param>
+        public void CreateTestDatabase()
+        {
+            _mongoClient = new MongoClient(ConnectionString);
+
+            if(_mongoClient != null && !string.IsNullOrEmpty(DatabaseName) && DatabaseName.StartsWith("Test_"))
+            {
+                IMongoDatabase db = _mongoClient.GetDatabase(DatabaseName);
+
+                string testCollectionName = "_test_";
+
+                BsonDocument testCollection = GetCollectionByName(db, testCollectionName);
+
+                if(testCollection == null || !testCollection.Any())
+                {
+                    db.CreateCollection(testCollectionName);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gibt dir Collection anhand eines Namens zurück
+        /// </summary>
+        /// <param name="db"></param>
+        /// <param name="testCollectionName"></param>
+        /// <returns></returns>
+        private static BsonDocument GetCollectionByName(IMongoDatabase db, string testCollectionName)
+        {
+            List<BsonDocument> listOfCollection = db.ListCollections().ToList();
+            BsonDocument testCollection = listOfCollection.FirstOrDefault(a => a.GetValue("name").AsString == testCollectionName);
+            return testCollection;
         }
 
         /// <summary>
@@ -107,24 +144,67 @@ namespace WebApi.Base
         }
 
         /// <summary>
+        /// Löscht die Datenbank
+        /// </summary>
+        /// <param name="name"></param>
+        public void DropDatabase(string name)
+        {
+            if(_mongoClient != null && !String.IsNullOrEmpty(name) && name.StartsWith("Test_"))
+            {
+                _mongoClient.DropDatabase(name);
+            }
+        }
+
+        /// <summary>
         /// Gibt eine IMongoCollection anhand des Names der Liste zurück
         /// </summary>
         /// <typeparam name="TDocument">Das Dokument, was ausgelesen werden soll</typeparam>
-        /// <param name="name"></param>
+        /// <param name="name">Der Name der Collection. Wenn der Name null oder leer ist, wird der Name von TDcoument verwendet</param>
         /// <param name="settings"></param>
         /// <returns></returns>
-        public IMongoCollection<TDocument> GetCollection<TDocument>(string name, MongoCollectionSettings settings = null)
+        public IMongoCollection<TDocument> GetCollection<TDocument>(string name = null, MongoCollectionSettings settings = null)
             where TDocument : ModelBaseObject
         {
-            return DatabaseInstance.GetCollection<TDocument>(name, settings);
+            string collectionName = name;
+            if(String.IsNullOrEmpty(collectionName))
+            {
+                collectionName = typeof(TDocument).Name;
+            }
+            return DatabaseInstance.GetCollection<TDocument>(collectionName, settings);
         }
 
+        /// <summary>
+        /// Ein Item in einer Collection speichern
+        /// </summary>
+        /// <typeparam name="TDocument">Der Typ des Item</typeparam>
+        /// <param name="document">Das Item</param>
+        /// <param name="collection">Die Collection, in der das Item abgelegt werden soll</param>
+        /// <returns></returns>
         public async Task<bool> SaveItem<TDocument>(TDocument document, IMongoCollection<TDocument> collection)
             where TDocument : ModelBaseObject
         {
             return await SaveItems(new List<TDocument>() { document }, collection);
         }
 
+        /// <summary>
+        /// Ein Item in einer Collection speichern
+        /// </summary>
+        /// <typeparam name="TDocument">Der Typ des Item</typeparam>
+        /// <param name="document">Das Item</param>
+        /// <returns></returns>
+        public async Task<bool> SaveItem<TDocument>(TDocument document)
+            where TDocument : ModelBaseObject
+        {
+            return await SaveItem<TDocument>(document, GetCollection<TDocument>());
+        }
+
+        /// <summary>
+        /// Speichert mehrere Items in einer Collection
+        /// </summary>
+        /// <typeparam name="TDocument">Der Typ des Item</typeparam>
+        /// <param name="documents">Die Items</param>
+        /// <param name="collection">Die Collection, in der die Items abgelegt werden sollen</param>
+        /// <returns></returns>
         public async Task<bool> SaveItems<TDocument>(List<TDocument> documents, IMongoCollection<TDocument> collection)
             where TDocument : ModelBaseObject
         {
