@@ -3,6 +3,10 @@
 #exit if any command fails
 set -e
 
+dotnet restore ./src/WebApi.Model
+
+dotnet build ./src/WebApi.Model -c Release -f net460
+
 dotnet restore ./src/WebApi
 
 # Ideally we would use the 'dotnet test' command to test netcoreapp and net451 so restrict for now 
