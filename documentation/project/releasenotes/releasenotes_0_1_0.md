@@ -20,3 +20,4 @@
 * #39 - SonarQube in Travis CI integrieren `environment`
 * #15 - Personen erweitern `feature`, `Person`, `Schüler`
 * #42 - README.md - Falscher Text für Travis CI `bug`,  `documentation`
+* #48 - Pull-Request-Template  `documentation`
