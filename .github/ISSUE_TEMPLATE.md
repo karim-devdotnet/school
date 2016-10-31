@@ -14,7 +14,7 @@ Detaillierte Beschreibung
 * [ ] Beschreibungs-Dokumentationen
   * [ ] Architektur-Handbuch (symbol)
   * [ ] Online-Handbuch (symbol)
-  * [ ] Kontenxt-Hilfe (symbol)
+  * [ ] Kontext-Hilfe (symbol)
   * [ ] Sicherheits-Handbuch (symbol)
 * [ ] Deployment-Handbuch (symbol)
 * [ ] Build-Prozess (symbol)
