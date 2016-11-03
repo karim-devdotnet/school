@@ -21,3 +21,4 @@
 * #15 - Personen erweitern `feature`, `Person`, `Schüler`
 * #42 - README.md - Falscher Text für Travis CI `bug`,  `documentation`
 * #48 - Pull-Request-Template  `documentation`
+* #53 - Bereitstellung der WebApi als Docker Image `environment`
