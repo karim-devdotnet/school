@@ -22,3 +22,4 @@
 * #42 - README.md - Falscher Text für Travis CI `bug`,  `documentation`
 * #48 - Pull-Request-Template  `documentation`
 * #53 - Bereitstellung der WebApi als Docker Image `environment`
+* #54 - Aktualisieren der benutzten Pakete in WebApi und WebClient `environment`
