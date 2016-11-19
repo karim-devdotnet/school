@@ -7,7 +7,8 @@
     "xunit": "2.2.0-beta2-build3300",
     "WebApi": "0.1.0",
     "NETStandard.Library": "1.6.1",
-    "NLog": "4.3.11"
+    "NLog": "4.3.11",
+    "Microsoft.DotNet.InternalAbstractions": "1.0.0"
   },
 
   "frameworks": {
