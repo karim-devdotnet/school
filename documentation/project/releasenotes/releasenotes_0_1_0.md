@@ -22,3 +22,4 @@
 * #42 - README.md - Falscher Text für Travis CI `bug`,  `documentation`
 * #48 - Pull-Request-Template  `documentation`
 * #54 - Aktualisieren der benutzten Pakete in WebApi und WebClient `environment`
+* #56 - Analyse von C#-Code für SonarQube `environment`
