@@ -23,3 +23,4 @@
 * #48 - Pull-Request-Template  `documentation`
 * #53 - Bereitstellung der WebApi als Docker Image `environment`
 * #54 - Aktualisieren der benutzten Pakete in WebApi und WebClient `environment`
+* #56 - Analyse von C#-Code für SonarQube `environment`
