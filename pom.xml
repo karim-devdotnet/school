@@ -15,7 +15,7 @@
 
     <properties>
         <sonar.language>cs</sonar.language>
-        <sonar.branch>develop,features/issue*</sonar.branch>
+        <sonar.branch>develop</sonar.branch>
         <sonar.sources>src</sonar.sources>
         <sonar.exclusions>src/WebClient/wwwroot/lib/**/*</sonar.exclusions>
     </properties>
