@@ -3,6 +3,10 @@ sudo: required
 dist: trusty
 addons:
   sonarqube: true
+sonarqube:
+  branches:
+    - develop
+    - master
 env:
   - CLI_VERSION=latest
 os:  
