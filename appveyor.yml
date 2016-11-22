@@ -5,6 +5,9 @@ branches:
   - develop
 services:
   - mongodb
+environment:
+  SonarToken:
+    secure: CH7kidekgG5BsX1Q2IyprUMuhim0d5s/KZMHGe78hgvYChkf1aKx0Zh1mZKbysKG
 build_script:
 - ps: . ./build.ps1
 - ps: choco install "msbuild-sonarqube-runner" -y
