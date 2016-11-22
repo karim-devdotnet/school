@@ -11,7 +11,7 @@ environment:
 build_script:
 - ps: . ./build.ps1
 - ps: choco install "sonarcube-scanner" -y
-- ps: sonar-scanner -Dsonar.projectKey=test:school -Dsonar.sources=src -Dsonar.version=1.0.* -Dsonar.host.url=https://sonarqube.com -Dsonar.login=[SonarToken]
+- ps: sonar-scanner -Dsonar.projectKey="test:school" -Dsonar.sources="src" -Dsonar.version="1.0.*" -Dsonar.host.url="https://sonarqube.com -Dsonar.login=$SonarToken
 platform: Any CPU
 configuration: Release
 test: off
